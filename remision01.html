@@ -1945,8 +1945,8 @@ style='font-size:10.5pt'>  </span></p>
  </tr>
 </table>
 
-<button onclick="enviarVariables()">1. Confirmar</button>&emsp;&emsp;
-<button onclick="imprimirPagina()">2. Imprimir</button>
+<button id="enviarBtn" onclick="enviarVariables()">1. Confirmar</button>&emsp;&emsp;
+<!-- <button onclick="imprimirPagina()">2. Imprimir</button> -->
 <!-- <button onclick="window.print()" style="display: none;">Imprimir</button> -->
 <!-- <button type="button" onclick="generarArchivo()">Generar archivo</button> -->
 
@@ -2813,21 +2813,27 @@ function enviarVariables() {
 	<!-- '&entry.465492154='+document.getElementById('ent_sel01').value+'&entry.1136709617='+document.getElementById('ent_sel02').value+'&entry.1457814500='+document.getElementById('ent_sel03').value+'&entry.1168691037='+document.getElementById('ent_sel04').value+'&entry.862089836='+document.getElementById('ent_sel05').value+'&entry.1967758786='+document.getElementById('ent_sel06').value+'&entry.1061824696='+document.getElementById('ent_sel07').value+'&entry.1126862246='+document.getElementById('ent_sel08').value+'&entry.1841202148='+document.getElementById('ent_sel09').value+'&entry.1294617168='+document.getElementById('ent_sel10').value+'&entry.1005744032='+document.getElementById('ent_sel11').value+'&entry.312115546='+document.getElementById('ent_sel12').value+'&entry.1501300567='+document.getElementById('ent_sel13').value+'&entry.2094182522='+document.getElementById('rec_sel01').value+'&entry.605805773='+document.getElementById('rec_sel02').value+'&entry.1474759709='+document.getElementById('rec_sel03').value+'&entry.695134644='+document.getElementById('rec_sel04').value+'&entry.180359912='+document.getElementById('rec_sel05').value+'&entry.110363210='+document.getElementById('rec_sel06').value+'&entry.586847325='+document.getElementById('rec_sel07').value+'&entry.1683281535='+document.getElementById('rec_sel08').value+'&entry.956198908='+document.getElementById('rec_sel09').value+'&entry.656453622='+document.getElementById('rec_sel10').value+'&entry.1792546793='+document.getElementById('rec_sel11').value+'&entry.1500398120='+document.getElementById('rec_sel12').value+'&entry.928252681='+document.getElementById('rec_sel13').value+'&entry.1783584471='+document.getElementById('sit_sel01').value+'&entry.800510121='+document.getElementById('sit_sel02').value+'&entry.1747886938='+document.getElementById('sit_sel03').value+'&entry.1430324517='+document.getElementById('sit_sel04').value+'&entry.2100362623='+document.getElementById('sit_sel05').value+'&entry.1269627506='+document.getElementById('sit_sel06').value+'&entry.914477911='+document.getElementById('sit_sel07').value+'&entry.1975057424='+document.getElementById('sit_sel08').value+'&entry.201847198='+document.getElementById('sit_sel09').value+'&entry.1262661477='+document.getElementById('sit_sel10').value+'&entry.1583668017='+document.getElementById('sit_sel11').value+'&entry.193415485='+document.getElementById('sit_sel12').value+'&entry.1950605122='+document.getElementById('sit_sel13').value -->
 
 	enlace = enlace.replace("#","%23");	
+	
+	var button = document.getElementById("enviarBtn");
+	button.style.backgroundColor = "green";
 	//console.log(enlace)
 	
 	fetch(enlace, { method: "POST", mode: "no-cors" });	 
 
 	enlace = enlace+'&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe;
-	  var textarea = document.createElement("textarea");
-	  textarea.value = enlace;
+	  <!-- var textarea = document.createElement("textarea"); -->
+	  <!-- textarea.value = enlace; -->
 	  
-	  document.body.appendChild(textarea);
-	  textarea.select();	  
-	  document.execCommand("copy");	  
-	  document.body.removeChild(textarea);	  
-	  //console.log(enlace);
+	  <!-- document.body.appendChild(textarea); -->
+	  <!-- textarea.select();	   -->
+	  <!-- document.execCommand("copy");	   -->
+	  <!-- document.body.removeChild(textarea);	   -->
+	  <!-- //console.log(enlace);	 -->
 	  
-	alert("Envio remision, copiar en asistente");
+	alert("Envio remision, OK");
+	
+	document.title = document.getElementById('remision').value+'-'+document.getElementById('documento').value+'.pdf';
+	window.print();
 	
 	<!-- fetch("https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse", { -->
 	  <!-- method: "POST", -->
@@ -3170,7 +3176,7 @@ function imprimirPagina() {
   
   //ventana.print();
   
-  document.title = document.getElementById('remision').value;
+  document.title = document.getElementById('remision').value+'-'+document.getElementById('documento').value+'.pdf';
   window.print();
 }
 function copiarAlPortapapeles() {
