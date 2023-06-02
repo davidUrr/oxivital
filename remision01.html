@@ -2821,14 +2821,16 @@ function enviarVariables() {
 	fetch(enlace, { method: "POST", mode: "no-cors" });	 
 
 	enlace = enlace+'&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe;
-	  <!-- var textarea = document.createElement("textarea"); -->
-	  <!-- textarea.value = enlace; -->
+	  var textarea = document.createElement("textarea");
+	  //textarea.value = enlace;
+	  var t_serv = ser === "01" ? "PRIM" : ser === "02" ? "RECU" : ser === "03" ? "INTE" : ser === "04" ?"RECO" : "DESP";
+	  textarea.value = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
 	  
-	  <!-- document.body.appendChild(textarea); -->
-	  <!-- textarea.select();	   -->
-	  <!-- document.execCommand("copy");	   -->
-	  <!-- document.body.removeChild(textarea);	   -->
-	  <!-- //console.log(enlace);	 -->
+	  document.body.appendChild(textarea);
+	  textarea.select();	  
+	  document.execCommand("copy");	  
+	  document.body.removeChild(textarea);	  
+	  //console.log(enlace);	
 	  
 	alert("Envio remision, OK");
 	
