@@ -2322,7 +2322,7 @@ function mostrarFechaHoraActual() {
   if (segundos < 10) segundos = "0" + segundos;
   
   // Construir la cadena de fecha y hora
-  var fechaHoraActualFormateada = dia + "/" + mes + "/" + anio + " " + hora + ":" + minutos + ":" + segundos;
+  var fechaHoraActualFormateada = anio + "-" + mes + "-" + dia + " " + hora + ":" + minutos + ":" + segundos;
   
   // Actualizar el contenido del elemento HTML
   <!-- document.getElementById("fecha_ent").textContent = fechaHoraActualFormateada; -->
