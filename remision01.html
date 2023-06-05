@@ -2834,7 +2834,7 @@ function enviarVariables() {
 	  
 	alert("Envio remision, OK");
 	
-	document.title = document.getElementById('remision').value+'-'+document.getElementById('documento').value+'.pdf';
+	document.title = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
 	window.print();
 	
 	<!-- fetch("https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse", { -->
