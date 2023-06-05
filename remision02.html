@@ -2765,8 +2765,7 @@ if (checkbox) {
 }
 });
 function enviarVariables() {
-	var respuesta = confirm("¿Estás seguro de enviar el formulario?");
-      if (respuesta == true) {
+	
 		try{
 			var ser = document.querySelector('input[name="servicio"]:checked').value;
 		}catch(error){
@@ -2910,11 +2909,7 @@ function enviarVariables() {
 		  <!-- }) -->
 		  <!-- .catch(error => console.error(error)); -->
 			
-      } else {
-        // Cancelar el envío del formulario
-        return false;
-      }
-	
+     	
 }
 function viajePerdido(){
 	var retVal = confirm("¿Desea registrar viaje perdido?");
