@@ -1784,7 +1784,7 @@ function viajePerdido(){
 		  document.body.removeChild(textarea);	
 		  
 		alert("Viaje Perdido");
-		document.title = document.getElementById('remision').value+'-'+document.getElementById('documento').value;
+		document.title = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
 		  window.print();
 			//document.write ("VIAJE PERDIDO, OK");
 
@@ -1903,17 +1903,18 @@ function enviarVariables() {
 	<!-- }); -->
 	
 	
-	
+	alert("Envio remision, OK");
 	enlace = enlace+'&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe;
 	  var textarea = document.createElement("textarea");
 	  //textarea.value = enlace;
 	  var t_serv = ser === "01" ? "PRIM" : ser === "02" ? "RECU" : ser === "03" ? "INTE" : ser === "04" ?"RECO" : "DESP";
-	  textarea.value = document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
+	  textarea.value = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
 	  
 	  document.body.appendChild(textarea);
 	  textarea.select();	  
 	  document.execCommand("copy");	  
 	  document.body.removeChild(textarea);
+	  document.title = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
 	  window.print();
 	  //console.log(enlace);
 	  
@@ -2272,36 +2273,6 @@ function copiarAlPortapapeles() {
   document.execCommand("copy");  
   document.body.removeChild(textarea);  
   console.log("Texto copiado al portapapeles: " + texto);
-}
-
-function cargarImagenes(){
-	var boton = document.getElementById("btncargarima");
-	var botoncar = document.getElementById("image-input");
-	var botoncar1 = document.getElementById("image-input1");
-	var canvas = document.getElementById("signature-pad");
-	var canvas1 = document.getElementById("signature-pad1");
-	if (boton.textContent === "Cargar firmas por imagenes"){
-		boton.textContent = "Firma táctil";		
-		botoncar.style.display = "block";
-		botoncar1.style.display = "block";
-		document.getElementById("cargarFirma").style.display= "block";
-		document.getElementById("cargarFirma1").style.display= "block";
-		canvas.style.width = "1";
-		canvas.style.height = "1";
-		canvas1.style.width = "1";
-		canvas1.style.height = "1";
-		
-	}else{
-		boton.textContent = "Cargar firmas por imagenes";
-		canvas.style.width = "330";
-		canvas.style.height = "130";
-		canvas1.style.width = "330";
-		canvas1.style.height = "130";
-		botoncar.style.display = "none";
-		botoncar1.style.display = "none";
-		document.getElementById("cargarFirma").style.display= "none";
-		document.getElementById("cargarFirma1").style.display= "none";
-	}	
 }
 
 function cargarImagenes(){
