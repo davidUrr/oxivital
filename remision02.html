@@ -2764,233 +2764,252 @@ if (checkbox) {
   checkbox.checked = true;
 }
 });
-function enviarVariables() {	
-	try{
-		var ser = document.querySelector('input[name="servicio"]:checked').value;
-	}catch(error){
-		var ser ="";
-	}
-	try{
-		var ace = document.querySelector('input[name="aceptacion"]:checked').value;
-	}catch(error){
-		var ace ="";
-	}	
-	var serv = ser === "01" ? "PRIMER SERVICIO" : ser === "02" ? "RECURRENTE" : ser === "03" ? "INTERCAMBIO" : ser === "04" ?"RECOLECCION" : "DESPACHO";
-	var acep = ace === "01" ? "acepta" : "no_acepto";
-	
-	var textTipos = "";
-	if (document.getElementById('ent_sel01').value !== '') {textTipos+='&entry.465492154='+document.getElementById('ent_sel01').value;};
-	if (document.getElementById('ent_sel02').value !== '') {textTipos+='&entry.1136709617='+document.getElementById('ent_sel02').value;};
-	if (document.getElementById('ent_sel03').value !== '') {textTipos+='&entry.1457814500='+document.getElementById('ent_sel03').value;};
-	if (document.getElementById('ent_sel04').value !== '') {textTipos+='&entry.1168691037='+document.getElementById('ent_sel04').value;};
-	if (document.getElementById('ent_sel05').value !== '') {textTipos+='&entry.862089836='+document.getElementById('ent_sel05').value;};
-	if (document.getElementById('ent_sel06').value !== '') {textTipos+='&entry.1967758786='+document.getElementById('ent_sel06').value;};
-	if (document.getElementById('ent_sel07').value !== '') {textTipos+='&entry.1061824696='+document.getElementById('ent_sel07').value;};
-	if (document.getElementById('ent_sel08').value !== '') {textTipos+='&entry.1126862246='+document.getElementById('ent_sel08').value;};
-	if (document.getElementById('ent_sel09').value !== '') {textTipos+='&entry.1841202148='+document.getElementById('ent_sel09').value;};
-	if (document.getElementById('ent_sel10').value !== '') {textTipos+='&entry.1294617168='+document.getElementById('ent_sel10').value;};
-	if (document.getElementById('ent_sel11').value !== '') {textTipos+='&entry.1005744032='+document.getElementById('ent_sel11').value;};
-	if (document.getElementById('ent_sel12').value !== '') {textTipos+='&entry.312115546='+document.getElementById('ent_sel12').value;};
-	if (document.getElementById('ent_sel13').value !== '') {textTipos+='&entry.1501300567='+document.getElementById('ent_sel13').value;};
-	if (document.getElementById('rec_sel01').value !== '') {textTipos+='&entry.2094182522='+document.getElementById('rec_sel01').value;};
-	if (document.getElementById('rec_sel02').value !== '') {textTipos+='&entry.605805773='+document.getElementById('rec_sel02').value;};
-	if (document.getElementById('rec_sel03').value !== '') {textTipos+='&entry.1474759709='+document.getElementById('rec_sel03').value;};
-	if (document.getElementById('rec_sel04').value !== '') {textTipos+='&entry.695134644='+document.getElementById('rec_sel04').value;};
-	if (document.getElementById('rec_sel05').value !== '') {textTipos+='&entry.180359912='+document.getElementById('rec_sel05').value;};
-	if (document.getElementById('rec_sel06').value !== '') {textTipos+='&entry.110363210='+document.getElementById('rec_sel06').value;};
-	if (document.getElementById('rec_sel07').value !== '') {textTipos+='&entry.586847325='+document.getElementById('rec_sel07').value;};
-	if (document.getElementById('rec_sel08').value !== '') {textTipos+='&entry.1683281535='+document.getElementById('rec_sel08').value;};
-	if (document.getElementById('rec_sel09').value !== '') {textTipos+='&entry.956198908='+document.getElementById('rec_sel09').value;};
-	if (document.getElementById('rec_sel10').value !== '') {textTipos+='&entry.656453622='+document.getElementById('rec_sel10').value;};
-	if (document.getElementById('rec_sel11').value !== '') {textTipos+='&entry.1792546793='+document.getElementById('rec_sel11').value;};
-	if (document.getElementById('rec_sel12').value !== '') {textTipos+='&entry.1500398120='+document.getElementById('rec_sel12').value;};
-	if (document.getElementById('rec_sel13').value !== '') {textTipos+='&entry.928252681='+document.getElementById('rec_sel13').value;};
-	if (document.getElementById('sit_sel01').value !== '') {textTipos+='&entry.1783584471='+document.getElementById('sit_sel01').value;};
-	if (document.getElementById('sit_sel02').value !== '') {textTipos+='&entry.800510121='+document.getElementById('sit_sel02').value;};
-	if (document.getElementById('sit_sel03').value !== '') {textTipos+='&entry.1747886938='+document.getElementById('sit_sel03').value;};
-	if (document.getElementById('sit_sel04').value !== '') {textTipos+='&entry.1430324517='+document.getElementById('sit_sel04').value;};
-	if (document.getElementById('sit_sel05').value !== '') {textTipos+='&entry.2100362623='+document.getElementById('sit_sel05').value;};
-	if (document.getElementById('sit_sel06').value !== '') {textTipos+='&entry.1269627506='+document.getElementById('sit_sel06').value;};
-	if (document.getElementById('sit_sel07').value !== '') {textTipos+='&entry.914477911='+document.getElementById('sit_sel07').value;};
-	if (document.getElementById('sit_sel08').value !== '') {textTipos+='&entry.1975057424='+document.getElementById('sit_sel08').value;};
-	if (document.getElementById('sit_sel09').value !== '') {textTipos+='&entry.201847198='+document.getElementById('sit_sel09').value;};
-	if (document.getElementById('sit_sel10').value !== '') {textTipos+='&entry.1262661477='+document.getElementById('sit_sel10').value;};
-	if (document.getElementById('sit_sel11').value !== '') {textTipos+='&entry.1583668017='+document.getElementById('sit_sel11').value;};
-	if (document.getElementById('sit_sel12').value !== '') {textTipos+='&entry.193415485='+document.getElementById('sit_sel12').value;};
-	if (document.getElementById('sit_sel13').value !== '') {textTipos+='&entry.1950605122='+document.getElementById('sit_sel13').value;};
+function enviarVariables() {
+	var respuesta = confirm("¿Estás seguro de enviar el formulario?");
+      if (respuesta == true) {
+		try{
+			var ser = document.querySelector('input[name="servicio"]:checked').value;
+		}catch(error){
+			var ser ="";
+		}
+		try{
+			var ace = document.querySelector('input[name="aceptacion"]:checked').value;
+		}catch(error){
+			var ace ="";
+		}	
+		var serv = ser === "01" ? "PRIMER SERVICIO" : ser === "02" ? "RECURRENTE" : ser === "03" ? "INTERCAMBIO" : ser === "04" ?"RECOLECCION" : "DESPACHO";
+		var acep = ace === "01" ? "acepta" : "no_acepto";
+		
+		var textTipos = "";
+		if (document.getElementById('ent_sel01').value !== '') {textTipos+='&entry.465492154='+document.getElementById('ent_sel01').value;};
+		if (document.getElementById('ent_sel02').value !== '') {textTipos+='&entry.1136709617='+document.getElementById('ent_sel02').value;};
+		if (document.getElementById('ent_sel03').value !== '') {textTipos+='&entry.1457814500='+document.getElementById('ent_sel03').value;};
+		if (document.getElementById('ent_sel04').value !== '') {textTipos+='&entry.1168691037='+document.getElementById('ent_sel04').value;};
+		if (document.getElementById('ent_sel05').value !== '') {textTipos+='&entry.862089836='+document.getElementById('ent_sel05').value;};
+		if (document.getElementById('ent_sel06').value !== '') {textTipos+='&entry.1967758786='+document.getElementById('ent_sel06').value;};
+		if (document.getElementById('ent_sel07').value !== '') {textTipos+='&entry.1061824696='+document.getElementById('ent_sel07').value;};
+		if (document.getElementById('ent_sel08').value !== '') {textTipos+='&entry.1126862246='+document.getElementById('ent_sel08').value;};
+		if (document.getElementById('ent_sel09').value !== '') {textTipos+='&entry.1841202148='+document.getElementById('ent_sel09').value;};
+		if (document.getElementById('ent_sel10').value !== '') {textTipos+='&entry.1294617168='+document.getElementById('ent_sel10').value;};
+		if (document.getElementById('ent_sel11').value !== '') {textTipos+='&entry.1005744032='+document.getElementById('ent_sel11').value;};
+		if (document.getElementById('ent_sel12').value !== '') {textTipos+='&entry.312115546='+document.getElementById('ent_sel12').value;};
+		if (document.getElementById('ent_sel13').value !== '') {textTipos+='&entry.1501300567='+document.getElementById('ent_sel13').value;};
+		if (document.getElementById('rec_sel01').value !== '') {textTipos+='&entry.2094182522='+document.getElementById('rec_sel01').value;};
+		if (document.getElementById('rec_sel02').value !== '') {textTipos+='&entry.605805773='+document.getElementById('rec_sel02').value;};
+		if (document.getElementById('rec_sel03').value !== '') {textTipos+='&entry.1474759709='+document.getElementById('rec_sel03').value;};
+		if (document.getElementById('rec_sel04').value !== '') {textTipos+='&entry.695134644='+document.getElementById('rec_sel04').value;};
+		if (document.getElementById('rec_sel05').value !== '') {textTipos+='&entry.180359912='+document.getElementById('rec_sel05').value;};
+		if (document.getElementById('rec_sel06').value !== '') {textTipos+='&entry.110363210='+document.getElementById('rec_sel06').value;};
+		if (document.getElementById('rec_sel07').value !== '') {textTipos+='&entry.586847325='+document.getElementById('rec_sel07').value;};
+		if (document.getElementById('rec_sel08').value !== '') {textTipos+='&entry.1683281535='+document.getElementById('rec_sel08').value;};
+		if (document.getElementById('rec_sel09').value !== '') {textTipos+='&entry.956198908='+document.getElementById('rec_sel09').value;};
+		if (document.getElementById('rec_sel10').value !== '') {textTipos+='&entry.656453622='+document.getElementById('rec_sel10').value;};
+		if (document.getElementById('rec_sel11').value !== '') {textTipos+='&entry.1792546793='+document.getElementById('rec_sel11').value;};
+		if (document.getElementById('rec_sel12').value !== '') {textTipos+='&entry.1500398120='+document.getElementById('rec_sel12').value;};
+		if (document.getElementById('rec_sel13').value !== '') {textTipos+='&entry.928252681='+document.getElementById('rec_sel13').value;};
+		if (document.getElementById('sit_sel01').value !== '') {textTipos+='&entry.1783584471='+document.getElementById('sit_sel01').value;};
+		if (document.getElementById('sit_sel02').value !== '') {textTipos+='&entry.800510121='+document.getElementById('sit_sel02').value;};
+		if (document.getElementById('sit_sel03').value !== '') {textTipos+='&entry.1747886938='+document.getElementById('sit_sel03').value;};
+		if (document.getElementById('sit_sel04').value !== '') {textTipos+='&entry.1430324517='+document.getElementById('sit_sel04').value;};
+		if (document.getElementById('sit_sel05').value !== '') {textTipos+='&entry.2100362623='+document.getElementById('sit_sel05').value;};
+		if (document.getElementById('sit_sel06').value !== '') {textTipos+='&entry.1269627506='+document.getElementById('sit_sel06').value;};
+		if (document.getElementById('sit_sel07').value !== '') {textTipos+='&entry.914477911='+document.getElementById('sit_sel07').value;};
+		if (document.getElementById('sit_sel08').value !== '') {textTipos+='&entry.1975057424='+document.getElementById('sit_sel08').value;};
+		if (document.getElementById('sit_sel09').value !== '') {textTipos+='&entry.201847198='+document.getElementById('sit_sel09').value;};
+		if (document.getElementById('sit_sel10').value !== '') {textTipos+='&entry.1262661477='+document.getElementById('sit_sel10').value;};
+		if (document.getElementById('sit_sel11').value !== '') {textTipos+='&entry.1583668017='+document.getElementById('sit_sel11').value;};
+		if (document.getElementById('sit_sel12').value !== '') {textTipos+='&entry.193415485='+document.getElementById('sit_sel12').value;};
+		if (document.getElementById('sit_sel13').value !== '') {textTipos+='&entry.1950605122='+document.getElementById('sit_sel13').value;};
 
-	if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(mostrarPosicion);
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(mostrarPosicion);
+		  } else {
+			console.log("La geolocalización no es soportada por este navegador.");
+		  }
+		
+		
+		//enlace = 'https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse?entry.1593601793='+serv+'&entry.1541534011='+document.getElementById('remision').value+'&entry.1258079191='+document.getElementById('pedido').value+'&entry.1787897184='+document.getElementById('fecha_sol').value+'&entry.352246656='+document.getElementById('fecha_ent').value+'&entry.1263642309='+document.getElementById('documento').value+'&entry.377607175='+document.getElementById('nombre').value+'&entry.355532896='+document.getElementById('direccion').value+'&entry.1495367398='+document.getElementById('municipio').value+'&entry.1068120880='+document.getElementById('entidad').value+'&entry.1770111390='+document.getElementById('telefono').value+'&entry.1974783259='+document.getElementById('barrio').value+'&entry.874001311='+document.getElementById('ent_cod01').value+'&entry.1174872703='+document.getElementById('ent_cod02').value+'&entry.1611959328='+document.getElementById('ent_cod03').value+'&entry.1164909994='+document.getElementById('ent_cod04').value+'&entry.1531896968='+document.getElementById('ent_cod05').value+'&entry.474954849='+document.getElementById('ent_cod06').value+'&entry.1468359333='+document.getElementById('ent_cod07').value+'&entry.578544079='+document.getElementById('ent_cod08').value+'&entry.1491756279='+document.getElementById('ent_cod09').value+'&entry.1934439774='+document.getElementById('ent_cod10').value+'&entry.2004622521='+document.getElementById('ent_cod11').value+'&entry.1171278078='+document.getElementById('ent_cod12').value+'&entry.1736192942='+document.getElementById('ent_cod13').value+'&entry.1552701956='+document.getElementById('rec_cod01').value+'&entry.1412107848='+document.getElementById('rec_cod02').value+'&entry.363828688='+document.getElementById('rec_cod03').value+'&entry.186031204='+document.getElementById('rec_cod04').value+'&entry.1440512844='+document.getElementById('rec_cod05').value+'&entry.1226009758='+document.getElementById('rec_cod06').value+'&entry.897396312='+document.getElementById('rec_cod07').value+'&entry.1220800172='+document.getElementById('rec_cod08').value+'&entry.1584799762='+document.getElementById('rec_cod09').value+'&entry.678300495='+document.getElementById('rec_cod10').value+'&entry.672864673='+document.getElementById('rec_cod12').value+'&entry.554318042='+document.getElementById('rec_cod11').value+'&entry.678265192='+document.getElementById('rec_cod13').value+'&entry.1681189721='+document.getElementById('sit_cod01').value+'&entry.1399744774='+document.getElementById('sit_cod02').value+'&entry.169806944='+document.getElementById('sit_cod03').value+'&entry.1873005852='+document.getElementById('sit_cod04').value+'&entry.944605545='+document.getElementById('sit_cod05').value+'&entry.1240587175='+document.getElementById('sit_cod06').value+'&entry.405347881='+document.getElementById('sit_cod07').value+'&entry.1930799714='+document.getElementById('sit_cod08').value+'&entry.526751164='+document.getElementById('sit_cod09').value+'&entry.950530058='+document.getElementById('sit_cod10').value+'&entry.1220833511='+document.getElementById('sit_cod11').value+'&entry.1105358320='+document.getElementById('sit_cod12').value+'&entry.473821649='+document.getElementById('sit_cod13').value+'&entry.199807932='+document.getElementById('sit_cap01').value+'&entry.283072160='+document.getElementById('sit_cap02').value+'&entry.456072234='+document.getElementById('sit_cap03').value+'&entry.1378651284='+document.getElementById('sit_cap04').value+'&entry.358641496='+document.getElementById('sit_cap05').value+'&entry.44291191='+document.getElementById('sit_cap06').value+'&entry.85265825='+document.getElementById('sit_cap07').value+'&entry.63480482='+document.getElementById('sit_cap08').value+'&entry.1274988056='+document.getElementById('sit_cap09').value+'&entry.2114892790='+document.getElementById('sit_cap10').value+'&entry.913707654='+document.getElementById('sit_cap11').value+'&entry.309208927='+document.getElementById('sit_cap12').value+'&entry.2109915258='+document.getElementById('sit_cap13').value+'&entry.625855803='+document.getElementById('consumible').value+'&entry.9168118='+document.getElementById('mascara').value+'&entry.1346039503='+document.getElementById('llave').value+'&entry.346276862='+document.getElementById('otros').value+'&entry.96252548='+document.getElementById('texto_otros').value+'&entry.686696043='+document.getElementById('observaciones').value+'&entry.1073294585='+document.getElementById('ck_efectivo').value+'&entry.431415996='+document.getElementById('efectivo').value+'&entry.1484288308='+document.getElementById('fecha').value+'&entry.758337739='+acep+'&entry.1344047750='+document.getElementById('nombre_entrega').value+'&entry.1246084911='+document.getElementById('nombre_recibe').value+'&entry.893484541='+document.getElementById('cc_entrega').value+'&entry.2078175185='+document.getElementById('cc_recibe').value+'&entry.1685646371='+document.getElementById('gps').value+'&entry.703846249='+document.getElementById('agente').value+'&entry.488997933='+document.getElementById('programa').value+textTipos;
+		enlace = 'https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse?entry.1593601793='+serv+'&entry.1541534011='+document.getElementById('remision').value+'&entry.1258079191='+document.getElementById('pedido').value+'&entry.1787897184='+document.getElementById('fecha_sol').value+'&entry.352246656='+document.getElementById('fecha_ent').value+'&entry.1263642309='+document.getElementById('documento').value+'&entry.377607175='+document.getElementById('nombre').value+'&entry.355532896='+document.getElementById('direccion').value+'&entry.1495367398='+document.getElementById('municipio').value+'&entry.1068120880='+document.getElementById('entidad').value+'&entry.1770111390='+document.getElementById('telefono').value+'&entry.1974783259='+document.getElementById('barrio').value+'&entry.874001311='+document.getElementById('ent_cod01').value+'&entry.1174872703='+document.getElementById('ent_cod02').value+'&entry.1611959328='+document.getElementById('ent_cod03').value+'&entry.1164909994='+document.getElementById('ent_cod04').value+'&entry.1531896968='+document.getElementById('ent_cod05').value+'&entry.474954849='+document.getElementById('ent_cod06').value+'&entry.1468359333='+document.getElementById('ent_cod07').value+'&entry.578544079='+document.getElementById('ent_cod08').value+'&entry.1491756279='+document.getElementById('ent_cod09').value+'&entry.1934439774='+document.getElementById('ent_cod10').value+'&entry.2004622521='+document.getElementById('ent_cod11').value+'&entry.1171278078='+document.getElementById('ent_cod12').value+'&entry.1736192942='+document.getElementById('ent_cod13').value+'&entry.1552701956='+document.getElementById('rec_cod01').value+'&entry.1412107848='+document.getElementById('rec_cod02').value+'&entry.363828688='+document.getElementById('rec_cod03').value+'&entry.186031204='+document.getElementById('rec_cod04').value+'&entry.1440512844='+document.getElementById('rec_cod05').value+'&entry.1226009758='+document.getElementById('rec_cod06').value+'&entry.897396312='+document.getElementById('rec_cod07').value+'&entry.1220800172='+document.getElementById('rec_cod08').value+'&entry.1584799762='+document.getElementById('rec_cod09').value+'&entry.678300495='+document.getElementById('rec_cod10').value+'&entry.672864673='+document.getElementById('rec_cod12').value+'&entry.554318042='+document.getElementById('rec_cod11').value+'&entry.678265192='+document.getElementById('rec_cod13').value+'&entry.1681189721='+document.getElementById('sit_cod01').value+'&entry.1399744774='+document.getElementById('sit_cod02').value+'&entry.169806944='+document.getElementById('sit_cod03').value+'&entry.1873005852='+document.getElementById('sit_cod04').value+'&entry.944605545='+document.getElementById('sit_cod05').value+'&entry.1240587175='+document.getElementById('sit_cod06').value+'&entry.405347881='+document.getElementById('sit_cod07').value+'&entry.1930799714='+document.getElementById('sit_cod08').value+'&entry.526751164='+document.getElementById('sit_cod09').value+'&entry.950530058='+document.getElementById('sit_cod10').value+'&entry.1220833511='+document.getElementById('sit_cod11').value+'&entry.1105358320='+document.getElementById('sit_cod12').value+'&entry.473821649='+document.getElementById('sit_cod13').value+'&entry.199807932='+document.getElementById('sit_cap01').value+'&entry.283072160='+document.getElementById('sit_cap02').value+'&entry.456072234='+document.getElementById('sit_cap03').value+'&entry.1378651284='+document.getElementById('sit_cap04').value+'&entry.358641496='+document.getElementById('sit_cap05').value+'&entry.44291191='+document.getElementById('sit_cap06').value+'&entry.85265825='+document.getElementById('sit_cap07').value+'&entry.63480482='+document.getElementById('sit_cap08').value+'&entry.1274988056='+document.getElementById('sit_cap09').value+'&entry.2114892790='+document.getElementById('sit_cap10').value+'&entry.913707654='+document.getElementById('sit_cap11').value+'&entry.309208927='+document.getElementById('sit_cap12').value+'&entry.2109915258='+document.getElementById('sit_cap13').value+'&entry.625855803='+document.getElementById('consumible').value+'&entry.9168118='+document.getElementById('mascara').value+'&entry.1346039503='+document.getElementById('llave').value+'&entry.346276862='+document.getElementById('otros').value+'&entry.96252548='+document.getElementById('texto_otros').value+'&entry.686696043='+document.getElementById('observaciones').value+'&entry.1073294585='+document.getElementById('ck_efectivo').value+'&entry.431415996='+document.getElementById('efectivo').value+'&entry.1484288308='+document.getElementById('fecha').value+'&entry.758337739='+acep+'&entry.1344047750='+document.getElementById('nombre_entrega').value+'&entry.1246084911='+document.getElementById('nombre_recibe').value+'&entry.893484541='+document.getElementById('cc_entrega').value+'&entry.2078175185='+document.getElementById('cc_recibe').value+'&entry.1685646371='+gps+'&entry.703846249='+document.getElementById('agente').value+'&entry.488997933='+document.getElementById('programa').value+textTipos;
+		
+		<!-- '&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe -->
+		<!-- '&entry.465492154='+document.getElementById('ent_sel01').value+'&entry.1136709617='+document.getElementById('ent_sel02').value+'&entry.1457814500='+document.getElementById('ent_sel03').value+'&entry.1168691037='+document.getElementById('ent_sel04').value+'&entry.862089836='+document.getElementById('ent_sel05').value+'&entry.1967758786='+document.getElementById('ent_sel06').value+'&entry.1061824696='+document.getElementById('ent_sel07').value+'&entry.1126862246='+document.getElementById('ent_sel08').value+'&entry.1841202148='+document.getElementById('ent_sel09').value+'&entry.1294617168='+document.getElementById('ent_sel10').value+'&entry.1005744032='+document.getElementById('ent_sel11').value+'&entry.312115546='+document.getElementById('ent_sel12').value+'&entry.1501300567='+document.getElementById('ent_sel13').value+'&entry.2094182522='+document.getElementById('rec_sel01').value+'&entry.605805773='+document.getElementById('rec_sel02').value+'&entry.1474759709='+document.getElementById('rec_sel03').value+'&entry.695134644='+document.getElementById('rec_sel04').value+'&entry.180359912='+document.getElementById('rec_sel05').value+'&entry.110363210='+document.getElementById('rec_sel06').value+'&entry.586847325='+document.getElementById('rec_sel07').value+'&entry.1683281535='+document.getElementById('rec_sel08').value+'&entry.956198908='+document.getElementById('rec_sel09').value+'&entry.656453622='+document.getElementById('rec_sel10').value+'&entry.1792546793='+document.getElementById('rec_sel11').value+'&entry.1500398120='+document.getElementById('rec_sel12').value+'&entry.928252681='+document.getElementById('rec_sel13').value+'&entry.1783584471='+document.getElementById('sit_sel01').value+'&entry.800510121='+document.getElementById('sit_sel02').value+'&entry.1747886938='+document.getElementById('sit_sel03').value+'&entry.1430324517='+document.getElementById('sit_sel04').value+'&entry.2100362623='+document.getElementById('sit_sel05').value+'&entry.1269627506='+document.getElementById('sit_sel06').value+'&entry.914477911='+document.getElementById('sit_sel07').value+'&entry.1975057424='+document.getElementById('sit_sel08').value+'&entry.201847198='+document.getElementById('sit_sel09').value+'&entry.1262661477='+document.getElementById('sit_sel10').value+'&entry.1583668017='+document.getElementById('sit_sel11').value+'&entry.193415485='+document.getElementById('sit_sel12').value+'&entry.1950605122='+document.getElementById('sit_sel13').value -->
+		
+		enlace = enlace.replace("#","%23");	
+		//console.log(enlace)
+		var button = document.getElementById("enviarBtn");
+		button.style.backgroundColor = "green";
+		
+		fetch(enlace, { method: "POST", mode: "no-cors" });
+		<!-- .then(response => { -->
+		  <!-- if (response.ok) { -->
+			<!-- alert("Envio remision OK"); -->
+		  <!-- } else { -->
+			<!-- alert("Error envio, verifique señal e intente de nuevo:"); -->
+		  <!-- } -->
+		<!-- }) -->
+		<!-- .catch(error => { -->
+		  <!-- alert("Error envio, verifique señal e intente de nuevo"); -->
+		<!-- }); -->
+		
+		
+		
+		enlace = enlace+'&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe;
+		  var textarea = document.createElement("textarea");
+		  //textarea.value = enlace;
+		  var t_serv = ser === "01" ? "PRIM" : ser === "02" ? "RECU" : ser === "03" ? "INTE" : ser === "04" ?"RECO" : "DESP";
+		  textarea.value = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
+		  
+		  document.body.appendChild(textarea);
+		  textarea.select();	  
+		  document.execCommand("copy");	  
+		  document.body.removeChild(textarea);	
+		  
+		  
+		  //console.log(enlace);
+		  
+		alert("Envio remision, OK");
+		document.title = document.getElementById('remision').value+'-'+document.getElementById('documento').value+'.pdf';
+		  window.print();
+		
+		<!-- fetch("https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse", { -->
+		  <!-- method: "POST", -->
+		  <!-- headers: { -->
+			<!-- 'Referer': referer_url, -->
+			<!-- 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', -->
+			<!-- 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept' -->
+		  <!-- }, -->
+		  <!-- body: formData -->
+		<!-- }) -->
+		<!-- .then(response => { -->
+		  <!-- if (response.ok) { -->
+			<!-- console.log("Variables enviadas con éxito"); -->
+		  <!-- } else { -->
+			<!-- console.log("Error al enviar las variables"); -->
+		  <!-- } -->
+		<!-- }) -->
+		<!-- .catch(error => { -->
+		  <!-- console.log("Error al enviar las variables:", error); -->
+		<!-- }); -->
+		
+		<!-- fetch(form_url, { -->
+		  <!-- mode: 'no-cors', -->
+		  <!-- method: 'POST', -->
+		  <!-- headers: { -->
+			<!-- 'Access-Control-Allow-Origin': referer_url, -->
+			<!-- 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', -->
+			<!-- 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept' -->
+		  <!-- }, -->
+		  <!-- body: formData -->
+		<!-- }) -->
+		  <!-- .then(response => { -->
+			<!-- if (response.ok) { -->
+			  <!-- console.log('Formulario enviado correctamente.'); -->
+			<!-- } else { -->
+			  <!-- console.log('Error al enviar el formulario.'); -->
+			<!-- } -->
+		  <!-- }) -->
+		  <!-- .catch(error => console.error(error)); -->
+			
       } else {
-        console.log("La geolocalización no es soportada por este navegador.");
+        // Cancelar el envío del formulario
+        return false;
       }
 	
-	
-	//enlace = 'https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse?entry.1593601793='+serv+'&entry.1541534011='+document.getElementById('remision').value+'&entry.1258079191='+document.getElementById('pedido').value+'&entry.1787897184='+document.getElementById('fecha_sol').value+'&entry.352246656='+document.getElementById('fecha_ent').value+'&entry.1263642309='+document.getElementById('documento').value+'&entry.377607175='+document.getElementById('nombre').value+'&entry.355532896='+document.getElementById('direccion').value+'&entry.1495367398='+document.getElementById('municipio').value+'&entry.1068120880='+document.getElementById('entidad').value+'&entry.1770111390='+document.getElementById('telefono').value+'&entry.1974783259='+document.getElementById('barrio').value+'&entry.874001311='+document.getElementById('ent_cod01').value+'&entry.1174872703='+document.getElementById('ent_cod02').value+'&entry.1611959328='+document.getElementById('ent_cod03').value+'&entry.1164909994='+document.getElementById('ent_cod04').value+'&entry.1531896968='+document.getElementById('ent_cod05').value+'&entry.474954849='+document.getElementById('ent_cod06').value+'&entry.1468359333='+document.getElementById('ent_cod07').value+'&entry.578544079='+document.getElementById('ent_cod08').value+'&entry.1491756279='+document.getElementById('ent_cod09').value+'&entry.1934439774='+document.getElementById('ent_cod10').value+'&entry.2004622521='+document.getElementById('ent_cod11').value+'&entry.1171278078='+document.getElementById('ent_cod12').value+'&entry.1736192942='+document.getElementById('ent_cod13').value+'&entry.1552701956='+document.getElementById('rec_cod01').value+'&entry.1412107848='+document.getElementById('rec_cod02').value+'&entry.363828688='+document.getElementById('rec_cod03').value+'&entry.186031204='+document.getElementById('rec_cod04').value+'&entry.1440512844='+document.getElementById('rec_cod05').value+'&entry.1226009758='+document.getElementById('rec_cod06').value+'&entry.897396312='+document.getElementById('rec_cod07').value+'&entry.1220800172='+document.getElementById('rec_cod08').value+'&entry.1584799762='+document.getElementById('rec_cod09').value+'&entry.678300495='+document.getElementById('rec_cod10').value+'&entry.672864673='+document.getElementById('rec_cod12').value+'&entry.554318042='+document.getElementById('rec_cod11').value+'&entry.678265192='+document.getElementById('rec_cod13').value+'&entry.1681189721='+document.getElementById('sit_cod01').value+'&entry.1399744774='+document.getElementById('sit_cod02').value+'&entry.169806944='+document.getElementById('sit_cod03').value+'&entry.1873005852='+document.getElementById('sit_cod04').value+'&entry.944605545='+document.getElementById('sit_cod05').value+'&entry.1240587175='+document.getElementById('sit_cod06').value+'&entry.405347881='+document.getElementById('sit_cod07').value+'&entry.1930799714='+document.getElementById('sit_cod08').value+'&entry.526751164='+document.getElementById('sit_cod09').value+'&entry.950530058='+document.getElementById('sit_cod10').value+'&entry.1220833511='+document.getElementById('sit_cod11').value+'&entry.1105358320='+document.getElementById('sit_cod12').value+'&entry.473821649='+document.getElementById('sit_cod13').value+'&entry.199807932='+document.getElementById('sit_cap01').value+'&entry.283072160='+document.getElementById('sit_cap02').value+'&entry.456072234='+document.getElementById('sit_cap03').value+'&entry.1378651284='+document.getElementById('sit_cap04').value+'&entry.358641496='+document.getElementById('sit_cap05').value+'&entry.44291191='+document.getElementById('sit_cap06').value+'&entry.85265825='+document.getElementById('sit_cap07').value+'&entry.63480482='+document.getElementById('sit_cap08').value+'&entry.1274988056='+document.getElementById('sit_cap09').value+'&entry.2114892790='+document.getElementById('sit_cap10').value+'&entry.913707654='+document.getElementById('sit_cap11').value+'&entry.309208927='+document.getElementById('sit_cap12').value+'&entry.2109915258='+document.getElementById('sit_cap13').value+'&entry.625855803='+document.getElementById('consumible').value+'&entry.9168118='+document.getElementById('mascara').value+'&entry.1346039503='+document.getElementById('llave').value+'&entry.346276862='+document.getElementById('otros').value+'&entry.96252548='+document.getElementById('texto_otros').value+'&entry.686696043='+document.getElementById('observaciones').value+'&entry.1073294585='+document.getElementById('ck_efectivo').value+'&entry.431415996='+document.getElementById('efectivo').value+'&entry.1484288308='+document.getElementById('fecha').value+'&entry.758337739='+acep+'&entry.1344047750='+document.getElementById('nombre_entrega').value+'&entry.1246084911='+document.getElementById('nombre_recibe').value+'&entry.893484541='+document.getElementById('cc_entrega').value+'&entry.2078175185='+document.getElementById('cc_recibe').value+'&entry.1685646371='+document.getElementById('gps').value+'&entry.703846249='+document.getElementById('agente').value+'&entry.488997933='+document.getElementById('programa').value+textTipos;
-	enlace = 'https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse?entry.1593601793='+serv+'&entry.1541534011='+document.getElementById('remision').value+'&entry.1258079191='+document.getElementById('pedido').value+'&entry.1787897184='+document.getElementById('fecha_sol').value+'&entry.352246656='+document.getElementById('fecha_ent').value+'&entry.1263642309='+document.getElementById('documento').value+'&entry.377607175='+document.getElementById('nombre').value+'&entry.355532896='+document.getElementById('direccion').value+'&entry.1495367398='+document.getElementById('municipio').value+'&entry.1068120880='+document.getElementById('entidad').value+'&entry.1770111390='+document.getElementById('telefono').value+'&entry.1974783259='+document.getElementById('barrio').value+'&entry.874001311='+document.getElementById('ent_cod01').value+'&entry.1174872703='+document.getElementById('ent_cod02').value+'&entry.1611959328='+document.getElementById('ent_cod03').value+'&entry.1164909994='+document.getElementById('ent_cod04').value+'&entry.1531896968='+document.getElementById('ent_cod05').value+'&entry.474954849='+document.getElementById('ent_cod06').value+'&entry.1468359333='+document.getElementById('ent_cod07').value+'&entry.578544079='+document.getElementById('ent_cod08').value+'&entry.1491756279='+document.getElementById('ent_cod09').value+'&entry.1934439774='+document.getElementById('ent_cod10').value+'&entry.2004622521='+document.getElementById('ent_cod11').value+'&entry.1171278078='+document.getElementById('ent_cod12').value+'&entry.1736192942='+document.getElementById('ent_cod13').value+'&entry.1552701956='+document.getElementById('rec_cod01').value+'&entry.1412107848='+document.getElementById('rec_cod02').value+'&entry.363828688='+document.getElementById('rec_cod03').value+'&entry.186031204='+document.getElementById('rec_cod04').value+'&entry.1440512844='+document.getElementById('rec_cod05').value+'&entry.1226009758='+document.getElementById('rec_cod06').value+'&entry.897396312='+document.getElementById('rec_cod07').value+'&entry.1220800172='+document.getElementById('rec_cod08').value+'&entry.1584799762='+document.getElementById('rec_cod09').value+'&entry.678300495='+document.getElementById('rec_cod10').value+'&entry.672864673='+document.getElementById('rec_cod12').value+'&entry.554318042='+document.getElementById('rec_cod11').value+'&entry.678265192='+document.getElementById('rec_cod13').value+'&entry.1681189721='+document.getElementById('sit_cod01').value+'&entry.1399744774='+document.getElementById('sit_cod02').value+'&entry.169806944='+document.getElementById('sit_cod03').value+'&entry.1873005852='+document.getElementById('sit_cod04').value+'&entry.944605545='+document.getElementById('sit_cod05').value+'&entry.1240587175='+document.getElementById('sit_cod06').value+'&entry.405347881='+document.getElementById('sit_cod07').value+'&entry.1930799714='+document.getElementById('sit_cod08').value+'&entry.526751164='+document.getElementById('sit_cod09').value+'&entry.950530058='+document.getElementById('sit_cod10').value+'&entry.1220833511='+document.getElementById('sit_cod11').value+'&entry.1105358320='+document.getElementById('sit_cod12').value+'&entry.473821649='+document.getElementById('sit_cod13').value+'&entry.199807932='+document.getElementById('sit_cap01').value+'&entry.283072160='+document.getElementById('sit_cap02').value+'&entry.456072234='+document.getElementById('sit_cap03').value+'&entry.1378651284='+document.getElementById('sit_cap04').value+'&entry.358641496='+document.getElementById('sit_cap05').value+'&entry.44291191='+document.getElementById('sit_cap06').value+'&entry.85265825='+document.getElementById('sit_cap07').value+'&entry.63480482='+document.getElementById('sit_cap08').value+'&entry.1274988056='+document.getElementById('sit_cap09').value+'&entry.2114892790='+document.getElementById('sit_cap10').value+'&entry.913707654='+document.getElementById('sit_cap11').value+'&entry.309208927='+document.getElementById('sit_cap12').value+'&entry.2109915258='+document.getElementById('sit_cap13').value+'&entry.625855803='+document.getElementById('consumible').value+'&entry.9168118='+document.getElementById('mascara').value+'&entry.1346039503='+document.getElementById('llave').value+'&entry.346276862='+document.getElementById('otros').value+'&entry.96252548='+document.getElementById('texto_otros').value+'&entry.686696043='+document.getElementById('observaciones').value+'&entry.1073294585='+document.getElementById('ck_efectivo').value+'&entry.431415996='+document.getElementById('efectivo').value+'&entry.1484288308='+document.getElementById('fecha').value+'&entry.758337739='+acep+'&entry.1344047750='+document.getElementById('nombre_entrega').value+'&entry.1246084911='+document.getElementById('nombre_recibe').value+'&entry.893484541='+document.getElementById('cc_entrega').value+'&entry.2078175185='+document.getElementById('cc_recibe').value+'&entry.1685646371='+gps+'&entry.703846249='+document.getElementById('agente').value+'&entry.488997933='+document.getElementById('programa').value+textTipos;
-	
-	<!-- '&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe -->
-	<!-- '&entry.465492154='+document.getElementById('ent_sel01').value+'&entry.1136709617='+document.getElementById('ent_sel02').value+'&entry.1457814500='+document.getElementById('ent_sel03').value+'&entry.1168691037='+document.getElementById('ent_sel04').value+'&entry.862089836='+document.getElementById('ent_sel05').value+'&entry.1967758786='+document.getElementById('ent_sel06').value+'&entry.1061824696='+document.getElementById('ent_sel07').value+'&entry.1126862246='+document.getElementById('ent_sel08').value+'&entry.1841202148='+document.getElementById('ent_sel09').value+'&entry.1294617168='+document.getElementById('ent_sel10').value+'&entry.1005744032='+document.getElementById('ent_sel11').value+'&entry.312115546='+document.getElementById('ent_sel12').value+'&entry.1501300567='+document.getElementById('ent_sel13').value+'&entry.2094182522='+document.getElementById('rec_sel01').value+'&entry.605805773='+document.getElementById('rec_sel02').value+'&entry.1474759709='+document.getElementById('rec_sel03').value+'&entry.695134644='+document.getElementById('rec_sel04').value+'&entry.180359912='+document.getElementById('rec_sel05').value+'&entry.110363210='+document.getElementById('rec_sel06').value+'&entry.586847325='+document.getElementById('rec_sel07').value+'&entry.1683281535='+document.getElementById('rec_sel08').value+'&entry.956198908='+document.getElementById('rec_sel09').value+'&entry.656453622='+document.getElementById('rec_sel10').value+'&entry.1792546793='+document.getElementById('rec_sel11').value+'&entry.1500398120='+document.getElementById('rec_sel12').value+'&entry.928252681='+document.getElementById('rec_sel13').value+'&entry.1783584471='+document.getElementById('sit_sel01').value+'&entry.800510121='+document.getElementById('sit_sel02').value+'&entry.1747886938='+document.getElementById('sit_sel03').value+'&entry.1430324517='+document.getElementById('sit_sel04').value+'&entry.2100362623='+document.getElementById('sit_sel05').value+'&entry.1269627506='+document.getElementById('sit_sel06').value+'&entry.914477911='+document.getElementById('sit_sel07').value+'&entry.1975057424='+document.getElementById('sit_sel08').value+'&entry.201847198='+document.getElementById('sit_sel09').value+'&entry.1262661477='+document.getElementById('sit_sel10').value+'&entry.1583668017='+document.getElementById('sit_sel11').value+'&entry.193415485='+document.getElementById('sit_sel12').value+'&entry.1950605122='+document.getElementById('sit_sel13').value -->
-	
-	enlace = enlace.replace("#","%23");	
-	//console.log(enlace)
-	var button = document.getElementById("enviarBtn");
-	button.style.backgroundColor = "green";
-	
-	fetch(enlace, { method: "POST", mode: "no-cors" });
-	<!-- .then(response => { -->
-	  <!-- if (response.ok) { -->
-		<!-- alert("Envio remision OK"); -->
-	  <!-- } else { -->
-		<!-- alert("Error envio, verifique señal e intente de nuevo:"); -->
-	  <!-- } -->
-	<!-- }) -->
-	<!-- .catch(error => { -->
-	  <!-- alert("Error envio, verifique señal e intente de nuevo"); -->
-	<!-- }); -->
-	
-	
-	
-	enlace = enlace+'&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe;
-	  var textarea = document.createElement("textarea");
-	  //textarea.value = enlace;
-	  var t_serv = ser === "01" ? "PRIM" : ser === "02" ? "RECU" : ser === "03" ? "INTE" : ser === "04" ?"RECO" : "DESP";
-	  textarea.value = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
-	  
-	  document.body.appendChild(textarea);
-	  textarea.select();	  
-	  document.execCommand("copy");	  
-	  document.body.removeChild(textarea);	
-	  
-	  
-	  //console.log(enlace);
-	  
-	alert("Envio remision, OK");
-	document.title = document.getElementById('remision').value+'-'+document.getElementById('documento').value+'.pdf';
-	  window.print();
-	
-	<!-- fetch("https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse", { -->
-	  <!-- method: "POST", -->
-	  <!-- headers: { -->
-		<!-- 'Referer': referer_url, -->
-		<!-- 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', -->
-		<!-- 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept' -->
-	  <!-- }, -->
-	  <!-- body: formData -->
-	<!-- }) -->
-	<!-- .then(response => { -->
-	  <!-- if (response.ok) { -->
-		<!-- console.log("Variables enviadas con éxito"); -->
-	  <!-- } else { -->
-		<!-- console.log("Error al enviar las variables"); -->
-	  <!-- } -->
-	<!-- }) -->
-	<!-- .catch(error => { -->
-	  <!-- console.log("Error al enviar las variables:", error); -->
-	<!-- }); -->
-	
-	<!-- fetch(form_url, { -->
-	  <!-- mode: 'no-cors', -->
-	  <!-- method: 'POST', -->
-	  <!-- headers: { -->
-		<!-- 'Access-Control-Allow-Origin': referer_url, -->
-		<!-- 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', -->
-		<!-- 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept' -->
-	  <!-- }, -->
-	  <!-- body: formData -->
-	<!-- }) -->
-	  <!-- .then(response => { -->
-		<!-- if (response.ok) { -->
-		  <!-- console.log('Formulario enviado correctamente.'); -->
-		<!-- } else { -->
-		  <!-- console.log('Error al enviar el formulario.'); -->
-		<!-- } -->
-	  <!-- }) -->
-	  <!-- .catch(error => console.error(error)); -->
 }
 function viajePerdido(){
-	try{
+	var retVal = confirm("¿Desea registrar viaje perdido?");
+    if( retVal == true ){
+		try{
 		var ser = document.querySelector('input[name="servicio"]:checked').value;
-	}catch(error){
-		var ser ="";
-	}
-	try{
-		var ace = document.querySelector('input[name="aceptacion"]:checked').value;
-	}catch(error){
-		var ace ="";
-	}	
-	var serv = ser === "01" ? "PRIMER SERVICIO" : ser === "02" ? "RECURRENTE" : ser === "03" ? "INTERCAMBIO" : ser === "04" ?"RECOLECCION" : "DESPACHO";
-	var acep = ace === "01" ? "acepta" : "no_acepto";
-	
-	var textTipos = "";
-	if (document.getElementById('ent_sel01').value !== '') {textTipos+='&entry.465492154='+document.getElementById('ent_sel01').value;};
-	if (document.getElementById('ent_sel02').value !== '') {textTipos+='&entry.1136709617='+document.getElementById('ent_sel02').value;};
-	if (document.getElementById('ent_sel03').value !== '') {textTipos+='&entry.1457814500='+document.getElementById('ent_sel03').value;};
-	if (document.getElementById('ent_sel04').value !== '') {textTipos+='&entry.1168691037='+document.getElementById('ent_sel04').value;};
-	if (document.getElementById('ent_sel05').value !== '') {textTipos+='&entry.862089836='+document.getElementById('ent_sel05').value;};
-	if (document.getElementById('ent_sel06').value !== '') {textTipos+='&entry.1967758786='+document.getElementById('ent_sel06').value;};
-	if (document.getElementById('ent_sel07').value !== '') {textTipos+='&entry.1061824696='+document.getElementById('ent_sel07').value;};
-	if (document.getElementById('ent_sel08').value !== '') {textTipos+='&entry.1126862246='+document.getElementById('ent_sel08').value;};
-	if (document.getElementById('ent_sel09').value !== '') {textTipos+='&entry.1841202148='+document.getElementById('ent_sel09').value;};
-	if (document.getElementById('ent_sel10').value !== '') {textTipos+='&entry.1294617168='+document.getElementById('ent_sel10').value;};
-	if (document.getElementById('ent_sel11').value !== '') {textTipos+='&entry.1005744032='+document.getElementById('ent_sel11').value;};
-	if (document.getElementById('ent_sel12').value !== '') {textTipos+='&entry.312115546='+document.getElementById('ent_sel12').value;};
-	if (document.getElementById('ent_sel13').value !== '') {textTipos+='&entry.1501300567='+document.getElementById('ent_sel13').value;};
-	if (document.getElementById('rec_sel01').value !== '') {textTipos+='&entry.2094182522='+document.getElementById('rec_sel01').value;};
-	if (document.getElementById('rec_sel02').value !== '') {textTipos+='&entry.605805773='+document.getElementById('rec_sel02').value;};
-	if (document.getElementById('rec_sel03').value !== '') {textTipos+='&entry.1474759709='+document.getElementById('rec_sel03').value;};
-	if (document.getElementById('rec_sel04').value !== '') {textTipos+='&entry.695134644='+document.getElementById('rec_sel04').value;};
-	if (document.getElementById('rec_sel05').value !== '') {textTipos+='&entry.180359912='+document.getElementById('rec_sel05').value;};
-	if (document.getElementById('rec_sel06').value !== '') {textTipos+='&entry.110363210='+document.getElementById('rec_sel06').value;};
-	if (document.getElementById('rec_sel07').value !== '') {textTipos+='&entry.586847325='+document.getElementById('rec_sel07').value;};
-	if (document.getElementById('rec_sel08').value !== '') {textTipos+='&entry.1683281535='+document.getElementById('rec_sel08').value;};
-	if (document.getElementById('rec_sel09').value !== '') {textTipos+='&entry.956198908='+document.getElementById('rec_sel09').value;};
-	if (document.getElementById('rec_sel10').value !== '') {textTipos+='&entry.656453622='+document.getElementById('rec_sel10').value;};
-	if (document.getElementById('rec_sel11').value !== '') {textTipos+='&entry.1792546793='+document.getElementById('rec_sel11').value;};
-	if (document.getElementById('rec_sel12').value !== '') {textTipos+='&entry.1500398120='+document.getElementById('rec_sel12').value;};
-	if (document.getElementById('rec_sel13').value !== '') {textTipos+='&entry.928252681='+document.getElementById('rec_sel13').value;};
-	if (document.getElementById('sit_sel01').value !== '') {textTipos+='&entry.1783584471='+document.getElementById('sit_sel01').value;};
-	if (document.getElementById('sit_sel02').value !== '') {textTipos+='&entry.800510121='+document.getElementById('sit_sel02').value;};
-	if (document.getElementById('sit_sel03').value !== '') {textTipos+='&entry.1747886938='+document.getElementById('sit_sel03').value;};
-	if (document.getElementById('sit_sel04').value !== '') {textTipos+='&entry.1430324517='+document.getElementById('sit_sel04').value;};
-	if (document.getElementById('sit_sel05').value !== '') {textTipos+='&entry.2100362623='+document.getElementById('sit_sel05').value;};
-	if (document.getElementById('sit_sel06').value !== '') {textTipos+='&entry.1269627506='+document.getElementById('sit_sel06').value;};
-	if (document.getElementById('sit_sel07').value !== '') {textTipos+='&entry.914477911='+document.getElementById('sit_sel07').value;};
-	if (document.getElementById('sit_sel08').value !== '') {textTipos+='&entry.1975057424='+document.getElementById('sit_sel08').value;};
-	if (document.getElementById('sit_sel09').value !== '') {textTipos+='&entry.201847198='+document.getElementById('sit_sel09').value;};
-	if (document.getElementById('sit_sel10').value !== '') {textTipos+='&entry.1262661477='+document.getElementById('sit_sel10').value;};
-	if (document.getElementById('sit_sel11').value !== '') {textTipos+='&entry.1583668017='+document.getElementById('sit_sel11').value;};
-	if (document.getElementById('sit_sel12').value !== '') {textTipos+='&entry.193415485='+document.getElementById('sit_sel12').value;};
-	if (document.getElementById('sit_sel13').value !== '') {textTipos+='&entry.1950605122='+document.getElementById('sit_sel13').value;};
+		}catch(error){
+			var ser ="";
+		}
+		try{
+			var ace = document.querySelector('input[name="aceptacion"]:checked').value;
+		}catch(error){
+			var ace ="";
+		}	
+		var serv = ser === "01" ? "PRIMER SERVICIO" : ser === "02" ? "RECURRENTE" : ser === "03" ? "INTERCAMBIO" : ser === "04" ?"RECOLECCION" : "DESPACHO";
+		var acep = ace === "01" ? "acepta" : "no_acepto";
+		
+		var textTipos = "";
+		if (document.getElementById('ent_sel01').value !== '') {textTipos+='&entry.465492154='+document.getElementById('ent_sel01').value;};
+		if (document.getElementById('ent_sel02').value !== '') {textTipos+='&entry.1136709617='+document.getElementById('ent_sel02').value;};
+		if (document.getElementById('ent_sel03').value !== '') {textTipos+='&entry.1457814500='+document.getElementById('ent_sel03').value;};
+		if (document.getElementById('ent_sel04').value !== '') {textTipos+='&entry.1168691037='+document.getElementById('ent_sel04').value;};
+		if (document.getElementById('ent_sel05').value !== '') {textTipos+='&entry.862089836='+document.getElementById('ent_sel05').value;};
+		if (document.getElementById('ent_sel06').value !== '') {textTipos+='&entry.1967758786='+document.getElementById('ent_sel06').value;};
+		if (document.getElementById('ent_sel07').value !== '') {textTipos+='&entry.1061824696='+document.getElementById('ent_sel07').value;};
+		if (document.getElementById('ent_sel08').value !== '') {textTipos+='&entry.1126862246='+document.getElementById('ent_sel08').value;};
+		if (document.getElementById('ent_sel09').value !== '') {textTipos+='&entry.1841202148='+document.getElementById('ent_sel09').value;};
+		if (document.getElementById('ent_sel10').value !== '') {textTipos+='&entry.1294617168='+document.getElementById('ent_sel10').value;};
+		if (document.getElementById('ent_sel11').value !== '') {textTipos+='&entry.1005744032='+document.getElementById('ent_sel11').value;};
+		if (document.getElementById('ent_sel12').value !== '') {textTipos+='&entry.312115546='+document.getElementById('ent_sel12').value;};
+		if (document.getElementById('ent_sel13').value !== '') {textTipos+='&entry.1501300567='+document.getElementById('ent_sel13').value;};
+		if (document.getElementById('rec_sel01').value !== '') {textTipos+='&entry.2094182522='+document.getElementById('rec_sel01').value;};
+		if (document.getElementById('rec_sel02').value !== '') {textTipos+='&entry.605805773='+document.getElementById('rec_sel02').value;};
+		if (document.getElementById('rec_sel03').value !== '') {textTipos+='&entry.1474759709='+document.getElementById('rec_sel03').value;};
+		if (document.getElementById('rec_sel04').value !== '') {textTipos+='&entry.695134644='+document.getElementById('rec_sel04').value;};
+		if (document.getElementById('rec_sel05').value !== '') {textTipos+='&entry.180359912='+document.getElementById('rec_sel05').value;};
+		if (document.getElementById('rec_sel06').value !== '') {textTipos+='&entry.110363210='+document.getElementById('rec_sel06').value;};
+		if (document.getElementById('rec_sel07').value !== '') {textTipos+='&entry.586847325='+document.getElementById('rec_sel07').value;};
+		if (document.getElementById('rec_sel08').value !== '') {textTipos+='&entry.1683281535='+document.getElementById('rec_sel08').value;};
+		if (document.getElementById('rec_sel09').value !== '') {textTipos+='&entry.956198908='+document.getElementById('rec_sel09').value;};
+		if (document.getElementById('rec_sel10').value !== '') {textTipos+='&entry.656453622='+document.getElementById('rec_sel10').value;};
+		if (document.getElementById('rec_sel11').value !== '') {textTipos+='&entry.1792546793='+document.getElementById('rec_sel11').value;};
+		if (document.getElementById('rec_sel12').value !== '') {textTipos+='&entry.1500398120='+document.getElementById('rec_sel12').value;};
+		if (document.getElementById('rec_sel13').value !== '') {textTipos+='&entry.928252681='+document.getElementById('rec_sel13').value;};
+		if (document.getElementById('sit_sel01').value !== '') {textTipos+='&entry.1783584471='+document.getElementById('sit_sel01').value;};
+		if (document.getElementById('sit_sel02').value !== '') {textTipos+='&entry.800510121='+document.getElementById('sit_sel02').value;};
+		if (document.getElementById('sit_sel03').value !== '') {textTipos+='&entry.1747886938='+document.getElementById('sit_sel03').value;};
+		if (document.getElementById('sit_sel04').value !== '') {textTipos+='&entry.1430324517='+document.getElementById('sit_sel04').value;};
+		if (document.getElementById('sit_sel05').value !== '') {textTipos+='&entry.2100362623='+document.getElementById('sit_sel05').value;};
+		if (document.getElementById('sit_sel06').value !== '') {textTipos+='&entry.1269627506='+document.getElementById('sit_sel06').value;};
+		if (document.getElementById('sit_sel07').value !== '') {textTipos+='&entry.914477911='+document.getElementById('sit_sel07').value;};
+		if (document.getElementById('sit_sel08').value !== '') {textTipos+='&entry.1975057424='+document.getElementById('sit_sel08').value;};
+		if (document.getElementById('sit_sel09').value !== '') {textTipos+='&entry.201847198='+document.getElementById('sit_sel09').value;};
+		if (document.getElementById('sit_sel10').value !== '') {textTipos+='&entry.1262661477='+document.getElementById('sit_sel10').value;};
+		if (document.getElementById('sit_sel11').value !== '') {textTipos+='&entry.1583668017='+document.getElementById('sit_sel11').value;};
+		if (document.getElementById('sit_sel12').value !== '') {textTipos+='&entry.193415485='+document.getElementById('sit_sel12').value;};
+		if (document.getElementById('sit_sel13').value !== '') {textTipos+='&entry.1950605122='+document.getElementById('sit_sel13').value;};
 
-	if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(mostrarPosicion);
-      } else {
-        console.log("La geolocalización no es soportada por este navegador.");
-      }	
-	
-	enlace = 'https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse?entry.1593601793='+serv+'&entry.1541534011='+document.getElementById('remision').value+'&entry.1258079191='+document.getElementById('pedido').value+'&entry.1787897184='+document.getElementById('fecha_sol').value+'&entry.352246656='+document.getElementById('fecha_ent').value+'&entry.1263642309='+document.getElementById('documento').value+'&entry.377607175='+document.getElementById('nombre').value+'&entry.355532896='+document.getElementById('direccion').value+'&entry.1495367398='+document.getElementById('municipio').value+'&entry.1068120880='+document.getElementById('entidad').value+'&entry.1770111390='+document.getElementById('telefono').value+'&entry.1974783259='+document.getElementById('barrio').value+'&entry.874001311='+document.getElementById('ent_cod01').value+'&entry.1174872703='+document.getElementById('ent_cod02').value+'&entry.1611959328='+document.getElementById('ent_cod03').value+'&entry.1164909994='+document.getElementById('ent_cod04').value+'&entry.1531896968='+document.getElementById('ent_cod05').value+'&entry.474954849='+document.getElementById('ent_cod06').value+'&entry.1468359333='+document.getElementById('ent_cod07').value+'&entry.578544079='+document.getElementById('ent_cod08').value+'&entry.1491756279='+document.getElementById('ent_cod09').value+'&entry.1934439774='+document.getElementById('ent_cod10').value+'&entry.2004622521='+document.getElementById('ent_cod11').value+'&entry.1171278078='+document.getElementById('ent_cod12').value+'&entry.1736192942='+document.getElementById('ent_cod13').value+'&entry.1552701956='+document.getElementById('rec_cod01').value+'&entry.1412107848='+document.getElementById('rec_cod02').value+'&entry.363828688='+document.getElementById('rec_cod03').value+'&entry.186031204='+document.getElementById('rec_cod04').value+'&entry.1440512844='+document.getElementById('rec_cod05').value+'&entry.1226009758='+document.getElementById('rec_cod06').value+'&entry.897396312='+document.getElementById('rec_cod07').value+'&entry.1220800172='+document.getElementById('rec_cod08').value+'&entry.1584799762='+document.getElementById('rec_cod09').value+'&entry.678300495='+document.getElementById('rec_cod10').value+'&entry.672864673='+document.getElementById('rec_cod12').value+'&entry.554318042='+document.getElementById('rec_cod11').value+'&entry.678265192='+document.getElementById('rec_cod13').value+'&entry.1681189721='+document.getElementById('sit_cod01').value+'&entry.1399744774='+document.getElementById('sit_cod02').value+'&entry.169806944='+document.getElementById('sit_cod03').value+'&entry.1873005852='+document.getElementById('sit_cod04').value+'&entry.944605545='+document.getElementById('sit_cod05').value+'&entry.1240587175='+document.getElementById('sit_cod06').value+'&entry.405347881='+document.getElementById('sit_cod07').value+'&entry.1930799714='+document.getElementById('sit_cod08').value+'&entry.526751164='+document.getElementById('sit_cod09').value+'&entry.950530058='+document.getElementById('sit_cod10').value+'&entry.1220833511='+document.getElementById('sit_cod11').value+'&entry.1105358320='+document.getElementById('sit_cod12').value+'&entry.473821649='+document.getElementById('sit_cod13').value+'&entry.199807932='+document.getElementById('sit_cap01').value+'&entry.283072160='+document.getElementById('sit_cap02').value+'&entry.456072234='+document.getElementById('sit_cap03').value+'&entry.1378651284='+document.getElementById('sit_cap04').value+'&entry.358641496='+document.getElementById('sit_cap05').value+'&entry.44291191='+document.getElementById('sit_cap06').value+'&entry.85265825='+document.getElementById('sit_cap07').value+'&entry.63480482='+document.getElementById('sit_cap08').value+'&entry.1274988056='+document.getElementById('sit_cap09').value+'&entry.2114892790='+document.getElementById('sit_cap10').value+'&entry.913707654='+document.getElementById('sit_cap11').value+'&entry.309208927='+document.getElementById('sit_cap12').value+'&entry.2109915258='+document.getElementById('sit_cap13').value+'&entry.625855803='+document.getElementById('consumible').value+'&entry.9168118='+document.getElementById('mascara').value+'&entry.1346039503='+document.getElementById('llave').value+'&entry.346276862='+document.getElementById('otros').value+'&entry.96252548='+document.getElementById('texto_otros').value+'&entry.686696043=VIAJE PERDIDO'+'&entry.1073294585='+document.getElementById('ck_efectivo').value+'&entry.431415996='+document.getElementById('efectivo').value+'&entry.1484288308='+document.getElementById('fecha').value+'&entry.758337739='+acep+'&entry.1344047750='+document.getElementById('nombre_entrega').value+'&entry.1246084911='+document.getElementById('nombre_recibe').value+'&entry.893484541='+document.getElementById('cc_entrega').value+'&entry.2078175185='+document.getElementById('cc_recibe').value+'&entry.1685646371='+gps+'&entry.703846249='+document.getElementById('agente').value+'&entry.488997933='+document.getElementById('programa').value+textTipos;
-	enlace = enlace.replace("#","%23");	
-	
-	var button = document.getElementById("perdidoBtn");
-	button.style.backgroundColor = "red";
-	
-	fetch(enlace, { method: "POST", mode: "no-cors" });
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(mostrarPosicion);
+		  } else {
+			console.log("La geolocalización no es soportada por este navegador.");
+		  }	
+		
+		enlace = 'https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse?entry.1593601793='+serv+'&entry.1541534011='+document.getElementById('remision').value+'&entry.1258079191='+document.getElementById('pedido').value+'&entry.1787897184='+document.getElementById('fecha_sol').value+'&entry.352246656='+document.getElementById('fecha_ent').value+'&entry.1263642309='+document.getElementById('documento').value+'&entry.377607175='+document.getElementById('nombre').value+'&entry.355532896='+document.getElementById('direccion').value+'&entry.1495367398='+document.getElementById('municipio').value+'&entry.1068120880='+document.getElementById('entidad').value+'&entry.1770111390='+document.getElementById('telefono').value+'&entry.1974783259='+document.getElementById('barrio').value+'&entry.874001311='+document.getElementById('ent_cod01').value+'&entry.1174872703='+document.getElementById('ent_cod02').value+'&entry.1611959328='+document.getElementById('ent_cod03').value+'&entry.1164909994='+document.getElementById('ent_cod04').value+'&entry.1531896968='+document.getElementById('ent_cod05').value+'&entry.474954849='+document.getElementById('ent_cod06').value+'&entry.1468359333='+document.getElementById('ent_cod07').value+'&entry.578544079='+document.getElementById('ent_cod08').value+'&entry.1491756279='+document.getElementById('ent_cod09').value+'&entry.1934439774='+document.getElementById('ent_cod10').value+'&entry.2004622521='+document.getElementById('ent_cod11').value+'&entry.1171278078='+document.getElementById('ent_cod12').value+'&entry.1736192942='+document.getElementById('ent_cod13').value+'&entry.1552701956='+document.getElementById('rec_cod01').value+'&entry.1412107848='+document.getElementById('rec_cod02').value+'&entry.363828688='+document.getElementById('rec_cod03').value+'&entry.186031204='+document.getElementById('rec_cod04').value+'&entry.1440512844='+document.getElementById('rec_cod05').value+'&entry.1226009758='+document.getElementById('rec_cod06').value+'&entry.897396312='+document.getElementById('rec_cod07').value+'&entry.1220800172='+document.getElementById('rec_cod08').value+'&entry.1584799762='+document.getElementById('rec_cod09').value+'&entry.678300495='+document.getElementById('rec_cod10').value+'&entry.672864673='+document.getElementById('rec_cod12').value+'&entry.554318042='+document.getElementById('rec_cod11').value+'&entry.678265192='+document.getElementById('rec_cod13').value+'&entry.1681189721='+document.getElementById('sit_cod01').value+'&entry.1399744774='+document.getElementById('sit_cod02').value+'&entry.169806944='+document.getElementById('sit_cod03').value+'&entry.1873005852='+document.getElementById('sit_cod04').value+'&entry.944605545='+document.getElementById('sit_cod05').value+'&entry.1240587175='+document.getElementById('sit_cod06').value+'&entry.405347881='+document.getElementById('sit_cod07').value+'&entry.1930799714='+document.getElementById('sit_cod08').value+'&entry.526751164='+document.getElementById('sit_cod09').value+'&entry.950530058='+document.getElementById('sit_cod10').value+'&entry.1220833511='+document.getElementById('sit_cod11').value+'&entry.1105358320='+document.getElementById('sit_cod12').value+'&entry.473821649='+document.getElementById('sit_cod13').value+'&entry.199807932='+document.getElementById('sit_cap01').value+'&entry.283072160='+document.getElementById('sit_cap02').value+'&entry.456072234='+document.getElementById('sit_cap03').value+'&entry.1378651284='+document.getElementById('sit_cap04').value+'&entry.358641496='+document.getElementById('sit_cap05').value+'&entry.44291191='+document.getElementById('sit_cap06').value+'&entry.85265825='+document.getElementById('sit_cap07').value+'&entry.63480482='+document.getElementById('sit_cap08').value+'&entry.1274988056='+document.getElementById('sit_cap09').value+'&entry.2114892790='+document.getElementById('sit_cap10').value+'&entry.913707654='+document.getElementById('sit_cap11').value+'&entry.309208927='+document.getElementById('sit_cap12').value+'&entry.2109915258='+document.getElementById('sit_cap13').value+'&entry.625855803='+document.getElementById('consumible').value+'&entry.9168118='+document.getElementById('mascara').value+'&entry.1346039503='+document.getElementById('llave').value+'&entry.346276862='+document.getElementById('otros').value+'&entry.96252548='+document.getElementById('texto_otros').value+'&entry.686696043=VIAJE PERDIDO'+'&entry.1073294585='+document.getElementById('ck_efectivo').value+'&entry.431415996='+document.getElementById('efectivo').value+'&entry.1484288308='+document.getElementById('fecha').value+'&entry.758337739='+acep+'&entry.1344047750='+document.getElementById('nombre_entrega').value+'&entry.1246084911='+document.getElementById('nombre_recibe').value+'&entry.893484541='+document.getElementById('cc_entrega').value+'&entry.2078175185='+document.getElementById('cc_recibe').value+'&entry.1685646371='+gps+'&entry.703846249='+document.getElementById('agente').value+'&entry.488997933='+document.getElementById('programa').value+textTipos;
+		enlace = enlace.replace("#","%23");	
+		
+		var button = document.getElementById("perdidoBtn");
+		button.style.backgroundColor = "red";
+		
+		fetch(enlace, { method: "POST", mode: "no-cors" });
 
-	enlace = enlace+'&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe;
-	  var textarea = document.createElement("textarea");
-	  
-	  var t_serv = ser === "01" ? "PRIM" : ser === "02" ? "RECU" : ser === "03" ? "INTE" : ser === "04" ?"RECO" : "DESP";
-	  textarea.value = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
-	  
-	  document.body.appendChild(textarea);
-	  textarea.select();	  
-	  document.execCommand("copy");	  
-	  document.body.removeChild(textarea);	
-	  
-	alert("Viaje Perdido");
-	document.title = document.getElementById('remision').value+'-'+document.getElementById('documento').value+'.pdf';
-	  window.print();
+		enlace = enlace+'&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe;
+		  var textarea = document.createElement("textarea");
+		  
+		  var t_serv = ser === "01" ? "PRIM" : ser === "02" ? "RECU" : ser === "03" ? "INTE" : ser === "04" ?"RECO" : "DESP";
+		  textarea.value = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
+		  
+		  document.body.appendChild(textarea);
+		  textarea.select();	  
+		  document.execCommand("copy");	  
+		  document.body.removeChild(textarea);	
+		  
+		alert("Viaje Perdido");
+		document.title = document.getElementById('remision').value+'-'+document.getElementById('documento').value;
+		  window.print();
+			//document.write ("VIAJE PERDIDO, OK");
+			return true;
+    }else{
+        //document.write ("CONTINUAR");
+        return false;
+    }
+
+
+	
 	
 }
 
