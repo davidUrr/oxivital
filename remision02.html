@@ -1784,7 +1784,7 @@ function viajePerdido(){
 		  document.body.removeChild(textarea);	
 		  
 		alert("Viaje Perdido");
-		document.title = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
+		document.title = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value+'.pdf';
 		  window.print();
 			//document.write ("VIAJE PERDIDO, OK");
 
@@ -1914,7 +1914,7 @@ function enviarVariables() {
 	  textarea.select();	  
 	  document.execCommand("copy");	  
 	  document.body.removeChild(textarea);
-	  document.title = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
+	  document.title = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value+'.pdf';
 	  window.print();
 	  //console.log(enlace);
 	  
