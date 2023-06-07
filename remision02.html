@@ -990,12 +990,14 @@ El responsable de la Base de Datos es OXIVITAL S.A., y la direcci√≥n donde podr√
 		<div class="popup">
 		  <h2>Firma</h2>
 		  <canvas id="signatureCanvas" width="800" height="400"></canvas>
+		  <div class="button-container">
 		  <button onclick="clearSignature()">Borrar</button>
 		  <button onclick="saveSignature()">Guardar</button>
-		  <button onclick="closePopup()">Cerrar</button>
+		  <button onclick="closePopup()">Cerrar</button>&emsp;&emsp;
 		  <input type="file" id="image-input" accept="image/*">
 		  <!-- <button id="cargarFirma" style="display: none;" onclick="loadAndResizeImage(event)">Cargar Imagen</button> -->
 		  <button id="cargarFirma" onclick="loadAndResizeImage(event)">Cargar Imagen</button>
+		  </div>
 		</div>
 	  </div>
 	  <img id="signatureImage" src="" alt="Firma" style="display: none;">
@@ -1010,11 +1012,13 @@ El responsable de la Base de Datos es OXIVITAL S.A., y la direcci√≥n donde podr√
 		<div class="popup1">
 		  <h2>Firma</h2>
 		  <canvas id="signatureCanvas1" width="800" height="400"></canvas>
+		  <div class="button-container">
 		  <button onclick="clearSignature1()">Borrar</button>
 		  <button onclick="saveSignature1()">Guardar</button>
-		  <button onclick="closePopup1()">Cerrar</button>
+		  <button onclick="closePopup1()">Cerrar</button>&emsp;&emsp;
 		  <input type="file" id="image-input1" accept="image/*">
 		  <button id="cargarFirma1" onclick="loadAndResizeImage1(event)">Cargar Imagen</button>
+		  </div>
 		  <!-- <button id="cargarFirma1" style="display: none;" onclick="loadAndResizeImage1(event)">Cargar Imagen</button> -->
 		</div>
 	  </div>
