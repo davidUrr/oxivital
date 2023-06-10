@@ -1059,6 +1059,9 @@ El responsable de la Base de Datos es OXIVITAL S.A., y la dirección donde podr�
 <!-- <button onclick="imprimirPagina()">2. Imprimir</button>&emsp;&emsp; -->
 <button id="perdidoBtn" onclick="viajePerdido()">Viaje Perdido</button>
 <button id="borrar">Borrar firmas</button>
+<!-- <button id="correoBtn" onclick="correoEnv()">Correo</button> -->
+<button id="correoBtn" onclick="generarArchivo()">Correo</button>
+<!-- <a href="mailto:demo@demo.com"><img src="ICON2.png"></a> -->
 <!-- <button id="btncargarima" onclick="cargarImagenes()">Cargar firmas por imagenes</button> -->
 </div>
 <script>
@@ -2011,8 +2014,19 @@ function enviarVariables() {
 		//console.log(enlace)
 		var button = document.getElementById("enviarBtn");
 		button.style.backgroundColor = "green";
-		
-		fetch(enlace, { method: "POST", mode: "no-cors" });
+		//const url = 'https://api.example.com/data';
+
+		hacerFetchCuandoOnline(enlace)
+		  .then(data => {
+			// Hacer algo con los datos
+			console.log(data);
+		  })
+		  .catch(error => {
+			// Manejar el error
+			console.error(error);
+		  });
+				
+		//fetch(enlace, { method: "POST", mode: "no-cors" });
 		<!-- .then(response => { -->
 		  <!-- if (response.ok) { -->
 			<!-- alert("Envio remision OK"); -->
@@ -2211,13 +2225,18 @@ function generarArchivo() {
 	var nombre_recibe_json=document.getElementById('nombre_recibe').value;
 	var cc_entrega_json=document.getElementById('cc_entrega').value;
 	var cc_recibe_json=document.getElementById('cc_recibe').value;
-	var firma_entrega_json=firma_entrega;
-	var firma_recibe_json=firma_recibe;
+	<!-- var firma_entrega_json=firma_entrega; -->
+	<!-- var firma_recibe_json=firma_recibe; -->
+	const firma_entrega_json = document.getElementById('signatureImage');
+	const firma_recibe_json = document.getElementById('signatureImage1');
+	const firma_entrega_json_src = firma_entrega_json.src;
+	const firma_recibe_json_src = firma_recibe_json.src;
 	var gps_json=document.getElementById('gps').value;
 	var agente_json=document.getElementById('agente').value;
 	var programa_json=document.getElementById('programa').value;
       
-	  var datos = {
+	  //var datos = {
+	  var objetoJson = {
 		tipo:serv_json,
 		remision:remision_json,
 		pedido:pedido_json,
@@ -2230,97 +2249,97 @@ function generarArchivo() {
 		entidad:entidad_json,
 		telefono:telefono_json,
 		barrio:barrio_json,
-		ent_sel01:ent_sel01_json,
-		ent_sel02:ent_sel02_json,
-		ent_sel03:ent_sel03_json,
-		ent_sel04:ent_sel04_json,
-		ent_sel05:ent_sel05_json,
-		ent_sel06:ent_sel06_json,
-		ent_sel07:ent_sel07_json,
-		ent_sel08:ent_sel08_json,
-		ent_sel09:ent_sel09_json,
-		ent_sel10:ent_sel10_json,
-		ent_sel11:ent_sel11_json,
-		ent_sel12:ent_sel12_json,
-		ent_sel13:ent_sel13_json,
-		rec_sel01:rec_sel01_json,
-		rec_sel02:rec_sel02_json,
-		rec_sel03:rec_sel03_json,
-		rec_sel04:rec_sel04_json,
-		rec_sel05:rec_sel05_json,
-		rec_sel06:rec_sel06_json,
-		rec_sel07:rec_sel07_json,
-		rec_sel08:rec_sel08_json,
-		rec_sel09:rec_sel09_json,
-		rec_sel10:rec_sel10_json,
-		rec_sel11:rec_sel11_json,
-		rec_sel12:rec_sel12_json,
-		rec_sel13:rec_sel13_json,
-		sit_sel01:sit_sel01_json,
-		sit_sel02:sit_sel02_json,
-		sit_sel03:sit_sel03_json,
-		sit_sel04:sit_sel04_json,
-		sit_sel05:sit_sel05_json,
-		sit_sel06:sit_sel06_json,
-		sit_sel07:sit_sel07_json,
-		sit_sel08:sit_sel08_json,
-		sit_sel09:sit_sel09_json,
-		sit_sel10:sit_sel10_json,
-		sit_sel11:sit_sel11_json,
-		sit_sel12:sit_sel12_json,
-		sit_sel13:sit_sel13_json,
-		ent_cod01:ent_cod01_json,
-		ent_cod02:ent_cod02_json,
-		ent_cod03:ent_cod03_json,
-		ent_cod04:ent_cod04_json,
-		ent_cod05:ent_cod05_json,
-		ent_cod06:ent_cod06_json,
-		ent_cod07:ent_cod07_json,
-		ent_cod08:ent_cod08_json,
-		ent_cod09:ent_cod09_json,
-		ent_cod10:ent_cod10_json,
-		ent_cod11:ent_cod11_json,
-		ent_cod12:ent_cod12_json,
-		ent_cod13:ent_cod13_json,
-		rec_cod01:rec_cod01_json,
-		rec_cod02:rec_cod02_json,
-		rec_cod03:rec_cod03_json,
-		rec_cod04:rec_cod04_json,
-		rec_cod05:rec_cod05_json,
-		rec_cod06:rec_cod06_json,
-		rec_cod07:rec_cod07_json,
-		rec_cod08:rec_cod08_json,
-		rec_cod09:rec_cod09_json,
-		rec_cod10:rec_cod10_json,
-		rec_cod12:rec_cod12_json,
-		rec_cod11:rec_cod11_json,
-		rec_cod13:rec_cod13_json,
-		sit_cod01:sit_cod01_json,
-		sit_cod02:sit_cod02_json,
-		sit_cod03:sit_cod03_json,
-		sit_cod04:sit_cod04_json,
-		sit_cod05:sit_cod05_json,
-		sit_cod06:sit_cod06_json,
-		sit_cod07:sit_cod07_json,
-		sit_cod08:sit_cod08_json,
-		sit_cod09:sit_cod09_json,
-		sit_cod10:sit_cod10_json,
-		sit_cod11:sit_cod11_json,
-		sit_cod12:sit_cod12_json,
-		sit_cod13:sit_cod13_json,
-		sit_cap01:sit_cap01_json,
-		sit_cap02:sit_cap02_json,
-		sit_cap03:sit_cap03_json,
-		sit_cap04:sit_cap04_json,
-		sit_cap05:sit_cap05_json,
-		sit_cap06:sit_cap06_json,
-		sit_cap07:sit_cap07_json,
-		sit_cap08:sit_cap08_json,
-		sit_cap09:sit_cap09_json,
-		sit_cap10:sit_cap10_json,
-		sit_cap11:sit_cap11_json,
-		sit_cap12:sit_cap12_json,
-		sit_cap13:sit_cap13_json,
+		<!-- ent_sel01:ent_sel01_json, -->
+		<!-- ent_sel02:ent_sel02_json, -->
+		<!-- ent_sel03:ent_sel03_json, -->
+		<!-- ent_sel04:ent_sel04_json, -->
+		<!-- ent_sel05:ent_sel05_json, -->
+		<!-- ent_sel06:ent_sel06_json, -->
+		<!-- ent_sel07:ent_sel07_json, -->
+		<!-- ent_sel08:ent_sel08_json, -->
+		<!-- ent_sel09:ent_sel09_json, -->
+		<!-- ent_sel10:ent_sel10_json, -->
+		<!-- ent_sel11:ent_sel11_json, -->
+		<!-- ent_sel12:ent_sel12_json, -->
+		<!-- ent_sel13:ent_sel13_json, -->
+		<!-- rec_sel01:rec_sel01_json, -->
+		<!-- rec_sel02:rec_sel02_json, -->
+		<!-- rec_sel03:rec_sel03_json, -->
+		<!-- rec_sel04:rec_sel04_json, -->
+		<!-- rec_sel05:rec_sel05_json, -->
+		<!-- rec_sel06:rec_sel06_json, -->
+		<!-- rec_sel07:rec_sel07_json, -->
+		<!-- rec_sel08:rec_sel08_json, -->
+		<!-- rec_sel09:rec_sel09_json, -->
+		<!-- rec_sel10:rec_sel10_json, -->
+		<!-- rec_sel11:rec_sel11_json, -->
+		<!-- rec_sel12:rec_sel12_json, -->
+		<!-- rec_sel13:rec_sel13_json, -->
+		<!-- sit_sel01:sit_sel01_json, -->
+		<!-- sit_sel02:sit_sel02_json, -->
+		<!-- sit_sel03:sit_sel03_json, -->
+		<!-- sit_sel04:sit_sel04_json, -->
+		<!-- sit_sel05:sit_sel05_json, -->
+		<!-- sit_sel06:sit_sel06_json, -->
+		<!-- sit_sel07:sit_sel07_json, -->
+		<!-- sit_sel08:sit_sel08_json, -->
+		<!-- sit_sel09:sit_sel09_json, -->
+		<!-- sit_sel10:sit_sel10_json, -->
+		<!-- sit_sel11:sit_sel11_json, -->
+		<!-- sit_sel12:sit_sel12_json, -->
+		<!-- sit_sel13:sit_sel13_json, -->
+		<!-- ent_cod01:ent_cod01_json, -->
+		<!-- ent_cod02:ent_cod02_json, -->
+		<!-- ent_cod03:ent_cod03_json, -->
+		<!-- ent_cod04:ent_cod04_json, -->
+		<!-- ent_cod05:ent_cod05_json, -->
+		<!-- ent_cod06:ent_cod06_json, -->
+		<!-- ent_cod07:ent_cod07_json, -->
+		<!-- ent_cod08:ent_cod08_json, -->
+		<!-- ent_cod09:ent_cod09_json, -->
+		<!-- ent_cod10:ent_cod10_json, -->
+		<!-- ent_cod11:ent_cod11_json, -->
+		<!-- ent_cod12:ent_cod12_json, -->
+		<!-- ent_cod13:ent_cod13_json, -->
+		<!-- rec_cod01:rec_cod01_json, -->
+		<!-- rec_cod02:rec_cod02_json, -->
+		<!-- rec_cod03:rec_cod03_json, -->
+		<!-- rec_cod04:rec_cod04_json, -->
+		<!-- rec_cod05:rec_cod05_json, -->
+		<!-- rec_cod06:rec_cod06_json, -->
+		<!-- rec_cod07:rec_cod07_json, -->
+		<!-- rec_cod08:rec_cod08_json, -->
+		<!-- rec_cod09:rec_cod09_json, -->
+		<!-- rec_cod10:rec_cod10_json, -->
+		<!-- rec_cod12:rec_cod12_json, -->
+		<!-- rec_cod11:rec_cod11_json, -->
+		<!-- rec_cod13:rec_cod13_json, -->
+		<!-- sit_cod01:sit_cod01_json, -->
+		<!-- sit_cod02:sit_cod02_json, -->
+		<!-- sit_cod03:sit_cod03_json, -->
+		<!-- sit_cod04:sit_cod04_json, -->
+		<!-- sit_cod05:sit_cod05_json, -->
+		<!-- sit_cod06:sit_cod06_json, -->
+		<!-- sit_cod07:sit_cod07_json, -->
+		<!-- sit_cod08:sit_cod08_json, -->
+		<!-- sit_cod09:sit_cod09_json, -->
+		<!-- sit_cod10:sit_cod10_json, -->
+		<!-- sit_cod11:sit_cod11_json, -->
+		<!-- sit_cod12:sit_cod12_json, -->
+		<!-- sit_cod13:sit_cod13_json, -->
+		<!-- sit_cap01:sit_cap01_json, -->
+		<!-- sit_cap02:sit_cap02_json, -->
+		<!-- sit_cap03:sit_cap03_json, -->
+		<!-- sit_cap04:sit_cap04_json, -->
+		<!-- sit_cap05:sit_cap05_json, -->
+		<!-- sit_cap06:sit_cap06_json, -->
+		<!-- sit_cap07:sit_cap07_json, -->
+		<!-- sit_cap08:sit_cap08_json, -->
+		<!-- sit_cap09:sit_cap09_json, -->
+		<!-- sit_cap10:sit_cap10_json, -->
+		<!-- sit_cap11:sit_cap11_json, -->
+		<!-- sit_cap12:sit_cap12_json, -->
+		<!-- sit_cap13:sit_cap13_json, -->
 		consumible:consumible_json,
 		mascara:mascara_json,
 		llave:llave_json,
@@ -2335,14 +2354,32 @@ function generarArchivo() {
 		nombre_recibe:nombre_recibe_json,
 		cc_entrega:cc_entrega_json,
 		cc_recibe:cc_recibe_json,
-		firma_entrega_json,
-		firma_recibe_json,
-		gps_json,
-		agente_json,
-		programa_json
+		<!-- firma_entrega_json:firma_entrega_json_src, -->
+		<!-- firma_recibe_json:firma_entrega_json_src, -->
+		<!-- gps_json, -->
+		<!-- agente_json, -->
+		<!-- programa_json -->
 	  };
+	  //const objetoJson ={nombre: 'Juan', edad: 30};
+	  const contenido = JSON.stringify(objetoJson);
 	  
-      var contenido = JSON.stringify(datos, null, 2);
+	  const destinatario="oxivitalservicio@gmail.com";
+	  const asunto="Remision "+remision_json;
+	  //const contenido = JSON.stringify(datos, null, 2);
+	  //const contenido = JSON.stringify(datos);
+	  ///console.log(contenido)
+	  //const contenido = "cnotenido donde se";
+	  //console.log(contenido);
+	  //var contenidoEMAIL = "mailto:oxivitalservicio@gmail.com?subject=Remision 10101&body="+contenido;
+	  //window.open('mailto:oxivitalservicio@gmail.com?subject=Remision 10101&body='+contenido);
+	  <!-- console.log(contenidoEMAIL); -->
+	  //window.open(contenidoEMAIL);
+	  
+	  //console.log(correo)
+      //window.open(correo, '_blank');
+	  //window.location.href = correo;
+	  
+	  <!-- // GENERAR EL JSON -->
       var archivo = new Blob([contenido], { type: 'application/json' });
       var url = URL.createObjectURL(archivo);
 
@@ -2350,6 +2387,8 @@ function generarArchivo() {
       enlace.href = url;
       enlace.download = document.getElementById('remision').value+'.json';
       enlace.click();
+	  const correo = `mailto:${destinatario}?subject=${encodeURIComponent(asunto)}`;
+	  window.open(correo);
     }
 	function obtenerPosicion() {
       if (navigator.geolocation) {
@@ -2515,6 +2554,40 @@ document.getElementById('borrar').addEventListener('click', function() {
 		botonFirma1.style.display = "block"; 
 	}
 });
+
+function hacerFetchCuandoOnline(url) {
+  return new Promise((resolve, reject) => {
+    function realizarFetch() {
+      fetch(url, { method: "POST", mode: "no-cors" })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Error en la solicitud');
+          }
+        })
+        .then(data => resolve(data))
+        .catch(error => reject(error));
+    }
+
+    if (navigator.onLine) {
+      realizarFetch();
+    } else {
+      const onlineListener = () => {
+        window.removeEventListener('online', onlineListener);
+        realizarFetch();
+      };
+      window.addEventListener('online', onlineListener);
+    }
+  });
+}
+function correoEnv(){
+	var contenido = 
+	window.open('mailto:oxivitalservicio@gmail.com?subject=Remision 10101&body=adsajsdñfajsdñflkasdf');
+
+}
+
+
 </script>
 </body>
 </html>
