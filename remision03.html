@@ -1831,7 +1831,7 @@ function viajePerdido(){
 			var ace ="";
 		}	
 		var serv = ser === "01" ? "PRIMER SERVICIO" : ser === "02" ? "RECURRENTE" : ser === "03" ? "INTERCAMBIO" : ser === "04" ?"RECOLECCION" : "DESPACHO";
-		var acep = ace === "01" ? "acepta" : "no_acepto";
+		var acep = ace === "01" ? "acepta" : "n_acepto";
 		
 		var textTipos = "";
 		if (document.getElementById('ent_sel01').value !== '') {textTipos+='&entry.465492154='+document.getElementById('ent_sel01').value;};
@@ -1880,7 +1880,7 @@ function viajePerdido(){
 			console.log("La geolocalización no es soportada por este navegador.");
 		  }	
 		
-		enlace = 'https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse?entry.1593601793='+serv+'&entry.1541534011='+document.getElementById('remision').value+'&entry.1258079191='+document.getElementById('pedido').value+'&entry.1787897184='+document.getElementById('fecha_sol').value+'&entry.352246656='+document.getElementById('fecha_ent').value+'&entry.1263642309='+document.getElementById('documento').value+'&entry.377607175='+document.getElementById('nombre').value+'&entry.355532896='+document.getElementById('direccion').value+'&entry.1495367398='+document.getElementById('municipio').value+'&entry.1068120880='+document.getElementById('entidad').value+'&entry.1770111390='+document.getElementById('telefono').value+'&entry.1974783259='+document.getElementById('barrio').value+'&entry.874001311='+document.getElementById('ent_cod01').value+'&entry.1174872703='+document.getElementById('ent_cod02').value+'&entry.1611959328='+document.getElementById('ent_cod03').value+'&entry.1164909994='+document.getElementById('ent_cod04').value+'&entry.1531896968='+document.getElementById('ent_cod05').value+'&entry.474954849='+document.getElementById('ent_cod06').value+'&entry.1468359333='+document.getElementById('ent_cod07').value+'&entry.578544079='+document.getElementById('ent_cod08').value+'&entry.1491756279='+document.getElementById('ent_cod09').value+'&entry.1934439774='+document.getElementById('ent_cod10').value+'&entry.2004622521='+document.getElementById('ent_cod11').value+'&entry.1171278078='+document.getElementById('ent_cod12').value+'&entry.1736192942='+document.getElementById('ent_cod13').value+'&entry.1552701956='+document.getElementById('rec_cod01').value+'&entry.1412107848='+document.getElementById('rec_cod02').value+'&entry.363828688='+document.getElementById('rec_cod03').value+'&entry.186031204='+document.getElementById('rec_cod04').value+'&entry.1440512844='+document.getElementById('rec_cod05').value+'&entry.1226009758='+document.getElementById('rec_cod06').value+'&entry.897396312='+document.getElementById('rec_cod07').value+'&entry.1220800172='+document.getElementById('rec_cod08').value+'&entry.1584799762='+document.getElementById('rec_cod09').value+'&entry.678300495='+document.getElementById('rec_cod10').value+'&entry.672864673='+document.getElementById('rec_cod12').value+'&entry.554318042='+document.getElementById('rec_cod11').value+'&entry.678265192='+document.getElementById('rec_cod13').value+'&entry.1681189721='+document.getElementById('sit_cod01').value+'&entry.1399744774='+document.getElementById('sit_cod02').value+'&entry.169806944='+document.getElementById('sit_cod03').value+'&entry.1873005852='+document.getElementById('sit_cod04').value+'&entry.944605545='+document.getElementById('sit_cod05').value+'&entry.1240587175='+document.getElementById('sit_cod06').value+'&entry.405347881='+document.getElementById('sit_cod07').value+'&entry.1930799714='+document.getElementById('sit_cod08').value+'&entry.526751164='+document.getElementById('sit_cod09').value+'&entry.950530058='+document.getElementById('sit_cod10').value+'&entry.1220833511='+document.getElementById('sit_cod11').value+'&entry.1105358320='+document.getElementById('sit_cod12').value+'&entry.473821649='+document.getElementById('sit_cod13').value+'&entry.199807932='+document.getElementById('sit_cap01').value+'&entry.283072160='+document.getElementById('sit_cap02').value+'&entry.456072234='+document.getElementById('sit_cap03').value+'&entry.1378651284='+document.getElementById('sit_cap04').value+'&entry.358641496='+document.getElementById('sit_cap05').value+'&entry.44291191='+document.getElementById('sit_cap06').value+'&entry.85265825='+document.getElementById('sit_cap07').value+'&entry.63480482='+document.getElementById('sit_cap08').value+'&entry.1274988056='+document.getElementById('sit_cap09').value+'&entry.2114892790='+document.getElementById('sit_cap10').value+'&entry.913707654='+document.getElementById('sit_cap11').value+'&entry.309208927='+document.getElementById('sit_cap12').value+'&entry.2109915258='+document.getElementById('sit_cap13').value+'&entry.625855803='+document.getElementById('consumible').value+'&entry.9168118='+document.getElementById('mascara').value+'&entry.1346039503='+document.getElementById('llave').value+'&entry.346276862='+document.getElementById('otros').value+'&entry.96252548='+document.getElementById('texto_otros').value+'&entry.686696043=VIAJE PERDIDO'+'&entry.1073294585='+document.getElementById('ck_efectivo').value+'&entry.431415996='+document.getElementById('efectivo').value+'&entry.1484288308='+document.getElementById('fecha').value+'&entry.758337739='+acep+'&entry.1344047750='+document.getElementById('nombre_entrega').value+'&entry.1246084911='+document.getElementById('nombre_recibe').value+'&entry.893484541='+document.getElementById('cc_entrega').value+'&entry.2078175185='+document.getElementById('cc_recibe').value+'&entry.1685646371='+gps+'&entry.703846249='+document.getElementById('agente').value+'&entry.488997933='+document.getElementById('programa').value+textTipos;
+		enlace = 'https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse?entry.1593601793='+serv+'&entry.1541534011='+document.getElementById('remision').value+'&entry.1258079191='+document.getElementById('pedido').value+'&entry.1787897184='+document.getElementById('fecha_sol').value+'&entry.352246656='+document.getElementById('fecha_ent').value+'&entry.1263642309='+document.getElementById('documento').value+'&entry.377607175='+document.getElementById('nombre').value+'&entry.355532896='+document.getElementById('direccion').value+'&entry.1495367398='+document.getElementById('municipio').value+'&entry.1068120880='+document.getElementById('entidad').value+'&entry.1770111390='+document.getElementById('telefono').value+'&entry.1974783259='+document.getElementById('barrio').value+'&entry.874001311='+document.getElementById('ent_cod01').value+'&entry.1174872703='+document.getElementById('ent_cod02').value+'&entry.1611959328='+document.getElementById('ent_cod03').value+'&entry.1164909994='+document.getElementById('ent_cod04').value+'&entry.1531896968='+document.getElementById('ent_cod05').value+'&entry.474954849='+document.getElementById('ent_cod06').value+'&entry.1468359333='+document.getElementById('ent_cod07').value+'&entry.578544079='+document.getElementById('ent_cod08').value+'&entry.1491756279='+document.getElementById('ent_cod09').value+'&entry.1934439774='+document.getElementById('ent_cod10').value+'&entry.2004622521='+document.getElementById('ent_cod11').value+'&entry.1171278078='+document.getElementById('ent_cod12').value+'&entry.1736192942='+document.getElementById('ent_cod13').value+'&entry.1552701956='+document.getElementById('rec_cod01').value+'&entry.1412107848='+document.getElementById('rec_cod02').value+'&entry.363828688='+document.getElementById('rec_cod03').value+'&entry.186031204='+document.getElementById('rec_cod04').value+'&entry.1440512844='+document.getElementById('rec_cod05').value+'&entry.1226009758='+document.getElementById('rec_cod06').value+'&entry.897396312='+document.getElementById('rec_cod07').value+'&entry.1220800172='+document.getElementById('rec_cod08').value+'&entry.1584799762='+document.getElementById('rec_cod09').value+'&entry.678300495='+document.getElementById('rec_cod10').value+'&entry.672864673='+document.getElementById('rec_cod12').value+'&entry.554318042='+document.getElementById('rec_cod11').value+'&entry.678265192='+document.getElementById('rec_cod13').value+'&entry.1681189721='+document.getElementById('sit_cod01').value+'&entry.1399744774='+document.getElementById('sit_cod02').value+'&entry.169806944='+document.getElementById('sit_cod03').value+'&entry.1873005852='+document.getElementById('sit_cod04').value+'&entry.944605545='+document.getElementById('sit_cod05').value+'&entry.1240587175='+document.getElementById('sit_cod06').value+'&entry.405347881='+document.getElementById('sit_cod07').value+'&entry.1930799714='+document.getElementById('sit_cod08').value+'&entry.526751164='+document.getElementById('sit_cod09').value+'&entry.950530058='+document.getElementById('sit_cod10').value+'&entry.1220833511='+document.getElementById('sit_cod11').value+'&entry.1105358320='+document.getElementById('sit_cod12').value+'&entry.473821649='+document.getElementById('sit_cod13').value+'&entry.199807932='+document.getElementById('sit_cap01').value+'&entry.283072160='+document.getElementById('sit_cap02').value+'&entry.456072234='+document.getElementById('sit_cap03').value+'&entry.1378651284='+document.getElementById('sit_cap04').value+'&entry.358641496='+document.getElementById('sit_cap05').value+'&entry.44291191='+document.getElementById('sit_cap06').value+'&entry.85265825='+document.getElementById('sit_cap07').value+'&entry.63480482='+document.getElementById('sit_cap08').value+'&entry.1274988056='+document.getElementById('sit_cap09').value+'&entry.2114892790='+document.getElementById('sit_cap10').value+'&entry.913707654='+document.getElementById('sit_cap11').value+'&entry.309208927='+document.getElementById('sit_cap12').value+'&entry.2109915258='+document.getElementById('sit_cap13').value+'&entry.625855803='+document.getElementById('consumible').value+'&entry.9168118='+document.getElementById('mascara').value+'&entry.1346039503='+document.getElementById('llave').value+'&entry.346276862='+document.getElementById('otros').value+'&entry.96252548='+document.getElementById('texto_otros').value+'&entry.686696043=VIAJE PERDIDO '+document.getElementById('observaciones').value+'&entry.1073294585='+document.getElementById('ck_efectivo').value+'&entry.431415996='+document.getElementById('efectivo').value+'&entry.1484288308='+document.getElementById('fecha').value+'&entry.758337739='+acep+'&entry.1344047750='+document.getElementById('nombre_entrega').value+'&entry.1246084911='+document.getElementById('nombre_recibe').value+'&entry.893484541='+document.getElementById('cc_entrega').value+'&entry.2078175185='+document.getElementById('cc_recibe').value+'&entry.1685646371='+gps+'&entry.703846249='+document.getElementById('agente').value+'&entry.488997933='+document.getElementById('programa').value+textTipos;
 		var caracterABuscar = /#/g;
 		var caracterReemplazo = "%23";
 		enlace = enlace.replace(caracterABuscar, caracterReemplazo);
@@ -1892,20 +1892,295 @@ function viajePerdido(){
 		fetch(enlace, { method: "POST", mode: "no-cors" });
 
 		enlace = enlace+'&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe;
-		  var textarea = document.createElement("textarea");
+		  //var textarea = document.createElement("textarea");
 		  
 		  var t_serv = ser === "01" ? "PRIM" : ser === "02" ? "RECU" : ser === "03" ? "INTE" : ser === "04" ?"RECO" : "DESP";
-		  textarea.value = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
+		  //textarea.value = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
 		  
-		  document.body.appendChild(textarea);
-		  textarea.select();	  
-		  document.execCommand("copy");	  
-		  document.body.removeChild(textarea);	
+		  //document.body.appendChild(textarea);
+		  //textarea.select();	  
+		  //document.execCommand("copy");	  
+		  //document.body.removeChild(textarea);	
 		  
 		alert("Viaje Perdido");
 		document.title = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value+'.pdf';
-		  window.print();
+		  //window.print();
 			//document.write ("VIAJE PERDIDO, OK");
+			try{
+			var ser = document.querySelector('input[name="servicio"]:checked').value;
+		}catch(error){
+			var ser ="";
+		}
+		try{
+			var ace = document.querySelector('input[name="aceptacion"]:checked').value;
+		}catch(error){
+			var ace ="";
+		}	
+		var serv_json = ser === "01" ? "PRIMER SERVICIO" : ser === "02" ? "RECURRENTE" : ser === "03" ? "INTERCAMBIO" : ser === "04" ?"RECOLECCION" : "DESPACHO";
+		var acep_json = ace === "01" ? "acepta" : "n_acepto";
+		var remision_json=document.getElementById('remision').value;
+		var pedido_json=document.getElementById('pedido').value;
+		var fecha_sol_json=document.getElementById('fecha_sol').value;
+		var fecha_ent_json=document.getElementById('fecha_ent').value;
+		var documento_json=document.getElementById('documento').value;
+		var nombre_json=document.getElementById('nombre').value;
+		var direccion_json=document.getElementById('direccion').value;
+		var municipio_json=document.getElementById('municipio').value;
+		var entidad_json=document.getElementById('entidad').value;
+		var telefono_json=document.getElementById('telefono').value;
+		var barrio_json=document.getElementById('barrio').value;
+		var ent_sel01_json=document.getElementById('ent_sel01').value;
+		var ent_sel02_json=document.getElementById('ent_sel02').value;
+		var ent_sel03_json=document.getElementById('ent_sel03').value;
+		var ent_sel04_json=document.getElementById('ent_sel04').value;
+		var ent_sel05_json=document.getElementById('ent_sel05').value;
+		var ent_sel06_json=document.getElementById('ent_sel06').value;
+		var ent_sel07_json=document.getElementById('ent_sel07').value;
+		var ent_sel08_json=document.getElementById('ent_sel08').value;
+		var ent_sel09_json=document.getElementById('ent_sel09').value;
+		var ent_sel10_json=document.getElementById('ent_sel10').value;
+		var ent_sel11_json=document.getElementById('ent_sel11').value;
+		var ent_sel12_json=document.getElementById('ent_sel12').value;
+		var ent_sel13_json=document.getElementById('ent_sel13').value;
+		var rec_sel01_json=document.getElementById('rec_sel01').value;
+		var rec_sel02_json=document.getElementById('rec_sel02').value;
+		var rec_sel03_json=document.getElementById('rec_sel03').value;
+		var rec_sel04_json=document.getElementById('rec_sel04').value;
+		var rec_sel05_json=document.getElementById('rec_sel05').value;
+		var rec_sel06_json=document.getElementById('rec_sel06').value;
+		var rec_sel07_json=document.getElementById('rec_sel07').value;
+		var rec_sel08_json=document.getElementById('rec_sel08').value;
+		var rec_sel09_json=document.getElementById('rec_sel09').value;
+		var rec_sel10_json=document.getElementById('rec_sel10').value;
+		var rec_sel11_json=document.getElementById('rec_sel11').value;
+		var rec_sel12_json=document.getElementById('rec_sel12').value;
+		var rec_sel13_json=document.getElementById('rec_sel13').value;
+		var sit_sel01_json=document.getElementById('sit_sel01').value;
+		var sit_sel02_json=document.getElementById('sit_sel02').value;
+		var sit_sel03_json=document.getElementById('sit_sel03').value;
+		var sit_sel04_json=document.getElementById('sit_sel04').value;
+		var sit_sel05_json=document.getElementById('sit_sel05').value;
+		var sit_sel06_json=document.getElementById('sit_sel06').value;
+		var sit_sel07_json=document.getElementById('sit_sel07').value;
+		var sit_sel08_json=document.getElementById('sit_sel08').value;
+		var sit_sel09_json=document.getElementById('sit_sel09').value;
+		var sit_sel10_json=document.getElementById('sit_sel10').value;
+		var sit_sel11_json=document.getElementById('sit_sel11').value;
+		var sit_sel12_json=document.getElementById('sit_sel12').value;
+		var sit_sel13_json=document.getElementById('sit_sel13').value;
+		var ent_cod01_json=document.getElementById('ent_cod01').value;
+		var ent_cod02_json=document.getElementById('ent_cod02').value;
+		var ent_cod03_json=document.getElementById('ent_cod03').value;
+		var ent_cod04_json=document.getElementById('ent_cod04').value;
+		var ent_cod05_json=document.getElementById('ent_cod05').value;
+		var ent_cod06_json=document.getElementById('ent_cod06').value;
+		var ent_cod07_json=document.getElementById('ent_cod07').value;
+		var ent_cod08_json=document.getElementById('ent_cod08').value;
+		var ent_cod09_json=document.getElementById('ent_cod09').value;
+		var ent_cod10_json=document.getElementById('ent_cod10').value;
+		var ent_cod11_json=document.getElementById('ent_cod11').value;
+		var ent_cod12_json=document.getElementById('ent_cod12').value;
+		var ent_cod13_json=document.getElementById('ent_cod13').value;
+		var rec_cod01_json=document.getElementById('rec_cod01').value;
+		var rec_cod02_json=document.getElementById('rec_cod02').value;
+		var rec_cod03_json=document.getElementById('rec_cod03').value;
+		var rec_cod04_json=document.getElementById('rec_cod04').value;
+		var rec_cod05_json=document.getElementById('rec_cod05').value;
+		var rec_cod06_json=document.getElementById('rec_cod06').value;
+		var rec_cod07_json=document.getElementById('rec_cod07').value;
+		var rec_cod08_json=document.getElementById('rec_cod08').value;
+		var rec_cod09_json=document.getElementById('rec_cod09').value;
+		var rec_cod10_json=document.getElementById('rec_cod10').value;
+		var rec_cod12_json=document.getElementById('rec_cod12').value;
+		var rec_cod11_json=document.getElementById('rec_cod11').value;
+		var rec_cod13_json=document.getElementById('rec_cod13').value;
+		var sit_cod01_json=document.getElementById('sit_cod01').value;
+		var sit_cod02_json=document.getElementById('sit_cod02').value;
+		var sit_cod03_json=document.getElementById('sit_cod03').value;
+		var sit_cod04_json=document.getElementById('sit_cod04').value;
+		var sit_cod05_json=document.getElementById('sit_cod05').value;
+		var sit_cod06_json=document.getElementById('sit_cod06').value;
+		var sit_cod07_json=document.getElementById('sit_cod07').value;
+		var sit_cod08_json=document.getElementById('sit_cod08').value;
+		var sit_cod09_json=document.getElementById('sit_cod09').value;
+		var sit_cod10_json=document.getElementById('sit_cod10').value;
+		var sit_cod11_json=document.getElementById('sit_cod11').value;
+		var sit_cod12_json=document.getElementById('sit_cod12').value;
+		var sit_cod13_json=document.getElementById('sit_cod13').value;
+		var sit_cap01_json=document.getElementById('sit_cap01').value;
+		var sit_cap02_json=document.getElementById('sit_cap02').value;
+		var sit_cap03_json=document.getElementById('sit_cap03').value;
+		var sit_cap04_json=document.getElementById('sit_cap04').value;
+		var sit_cap05_json=document.getElementById('sit_cap05').value;
+		var sit_cap06_json=document.getElementById('sit_cap06').value;
+		var sit_cap07_json=document.getElementById('sit_cap07').value;
+		var sit_cap08_json=document.getElementById('sit_cap08').value;
+		var sit_cap09_json=document.getElementById('sit_cap09').value;
+		var sit_cap10_json=document.getElementById('sit_cap10').value;
+		var sit_cap11_json=document.getElementById('sit_cap11').value;
+		var sit_cap12_json=document.getElementById('sit_cap12').value;
+		var sit_cap13_json=document.getElementById('sit_cap13').value;
+		var consumible_json=document.getElementById('consumible').value;
+		var mascara_json=document.getElementById('mascara').value;
+		var llave_json=document.getElementById('llave').value;
+		var otros_json=document.getElementById('otros').value;
+		var texto_otros_json=document.getElementById('texto_otros').value;
+		var observaciones_json=document.getElementById('observaciones').value;
+		var ck_efectivo_json=document.getElementById('ck_efectivo').value;
+		var efectivo_json=document.getElementById('efectivo').value;
+		var fecha_json=document.getElementById('fecha').value;
+
+		var nombre_entrega_json=document.getElementById('nombre_entrega').value;
+		var nombre_recibe_json=document.getElementById('nombre_recibe').value;
+		var cc_entrega_json=document.getElementById('cc_entrega').value;
+		var cc_recibe_json=document.getElementById('cc_recibe').value;
+		
+		const firma_entrega_json = document.getElementById('signatureImage');
+		const firma_recibe_json = document.getElementById('signatureImage1');
+		const firma_entrega_json_src = firma_entrega_json.src;
+		const firma_recibe_json_src = firma_recibe_json.src;
+		var gps_json=document.getElementById('gps').value;
+		var agente_json=document.getElementById('agente').value;
+		var programa_json=document.getElementById('programa').value;
+		  
+		  //var datos = {
+		  var objetoJson = {
+			tipo:serv_json,
+			remision:remision_json,
+			pedido:pedido_json,
+			fecha_sol:fecha_sol_json,
+			fecha_ent:fecha_ent_json,
+			documento:documento_json,
+			nombre:nombre_json,
+			direccion:direccion_json,
+			municipio:municipio_json,
+			entidad:entidad_json,
+			telefono:telefono_json,
+			barrio:barrio_json,
+			ent_sel01:ent_sel01_json,
+			ent_sel02:ent_sel02_json,
+			ent_sel03:ent_sel03_json,
+			ent_sel04:ent_sel04_json,
+			ent_sel05:ent_sel05_json,
+			ent_sel06:ent_sel06_json,
+			ent_sel07:ent_sel07_json,
+			ent_sel08:ent_sel08_json,
+			ent_sel09:ent_sel09_json,
+			ent_sel10:ent_sel10_json,
+			ent_sel11:ent_sel11_json,
+			ent_sel12:ent_sel12_json,
+			ent_sel13:ent_sel13_json,
+			rec_sel01:rec_sel01_json,
+			rec_sel02:rec_sel02_json,
+			rec_sel03:rec_sel03_json,
+			rec_sel04:rec_sel04_json,
+			rec_sel05:rec_sel05_json,
+			rec_sel06:rec_sel06_json,
+			rec_sel07:rec_sel07_json,
+			rec_sel08:rec_sel08_json,
+			rec_sel09:rec_sel09_json,
+			rec_sel10:rec_sel10_json,
+			rec_sel11:rec_sel11_json,
+			rec_sel12:rec_sel12_json,
+			rec_sel13:rec_sel13_json,
+			sit_sel01:sit_sel01_json,
+			sit_sel02:sit_sel02_json,
+			sit_sel03:sit_sel03_json,
+			sit_sel04:sit_sel04_json,
+			sit_sel05:sit_sel05_json,
+			sit_sel06:sit_sel06_json,
+			sit_sel07:sit_sel07_json,
+			sit_sel08:sit_sel08_json,
+			sit_sel09:sit_sel09_json,
+			sit_sel10:sit_sel10_json,
+			sit_sel11:sit_sel11_json,
+			sit_sel12:sit_sel12_json,
+			sit_sel13:sit_sel13_json,
+			ent_cod01:ent_cod01_json,
+			ent_cod02:ent_cod02_json,
+			ent_cod03:ent_cod03_json,
+			ent_cod04:ent_cod04_json,
+			ent_cod05:ent_cod05_json,
+			ent_cod06:ent_cod06_json,
+			ent_cod07:ent_cod07_json,
+			ent_cod08:ent_cod08_json,
+			ent_cod09:ent_cod09_json,
+			ent_cod10:ent_cod10_json,
+			ent_cod11:ent_cod11_json,
+			ent_cod12:ent_cod12_json,
+			ent_cod13:ent_cod13_json,
+			rec_cod01:rec_cod01_json,
+			rec_cod02:rec_cod02_json,
+			rec_cod03:rec_cod03_json,
+			rec_cod04:rec_cod04_json,
+			rec_cod05:rec_cod05_json,
+			rec_cod06:rec_cod06_json,
+			rec_cod07:rec_cod07_json,
+			rec_cod08:rec_cod08_json,
+			rec_cod09:rec_cod09_json,
+			rec_cod10:rec_cod10_json,
+			rec_cod12:rec_cod12_json,
+			rec_cod11:rec_cod11_json,
+			rec_cod13:rec_cod13_json,
+			sit_cod01:sit_cod01_json,
+			sit_cod02:sit_cod02_json,
+			sit_cod03:sit_cod03_json,
+			sit_cod04:sit_cod04_json,
+			sit_cod05:sit_cod05_json,
+			sit_cod06:sit_cod06_json,
+			sit_cod07:sit_cod07_json,
+			sit_cod08:sit_cod08_json,
+			sit_cod09:sit_cod09_json,
+			sit_cod10:sit_cod10_json,
+			sit_cod11:sit_cod11_json,
+			sit_cod12:sit_cod12_json,
+			sit_cod13:sit_cod13_json,
+			sit_cap01:sit_cap01_json,
+			sit_cap02:sit_cap02_json,
+			sit_cap03:sit_cap03_json,
+			sit_cap04:sit_cap04_json,
+			sit_cap05:sit_cap05_json,
+			sit_cap06:sit_cap06_json,
+			sit_cap07:sit_cap07_json,
+			sit_cap08:sit_cap08_json,
+			sit_cap09:sit_cap09_json,
+			sit_cap10:sit_cap10_json,
+			sit_cap11:sit_cap11_json,
+			sit_cap12:sit_cap12_json,
+			sit_cap13:sit_cap13_json,
+			consumible:consumible_json,
+			mascara:mascara_json,
+			llave:llave_json,
+			otros:otros_json,
+			texto_otros:texto_otros_json,
+			observaciones:observaciones_json,
+			ck_efectivo:ck_efectivo_json,
+			efectivo:efectivo_json,
+			fecha:fecha_json,
+			aceptacion:acep_json,
+			nombre_entrega:nombre_entrega_json,
+			nombre_recibe:nombre_recibe_json,
+			cc_entrega:cc_entrega_json,
+			cc_recibe:cc_recibe_json,
+			firma_entrega_json:firma_entrega_json_src,
+			firma_recibe_json:firma_recibe_json_src,
+			gps_json,
+			agente_json,
+			programa_json
+		  };		  
+		  const contenido = JSON.stringify(objetoJson);		  
+		  const destinatario="oxivitalservicio@gmail.com";
+		  //const asunto="Remision "+remision_json;	
+		  const asunto="Remision "+document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value+'.pdf';
+		  var archivo = new Blob([contenido], { type: 'application/json' });
+		  var url = URL.createObjectURL(archivo);
+		  var enlace = document.createElement('a');
+		  enlace.href = url;
+		  //enlace.download = document.getElementById('remision').value+'.json';
+		  enlace.download = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value+'.json';
+		  enlace.click();
+		  const correo = `mailto:${destinatario}?subject=${encodeURIComponent(asunto)}`;
+		  window.open(correo);
 
 	}
 }
@@ -1950,7 +2225,7 @@ function enviarVariables() {
 			var ace ="";
 		}	
 		var serv = ser === "01" ? "PRIMER SERVICIO" : ser === "02" ? "RECURRENTE" : ser === "03" ? "INTERCAMBIO" : ser === "04" ?"RECOLECCION" : "DESPACHO";
-		var acep = ace === "01" ? "acepta" : "no_acepto";
+		var acep = ace === "01" ? "acepta" : "n_acepto";
 		
 		var textTipos = "";
 		if (document.getElementById('ent_sel01').value !== '') {textTipos+='&entry.465492154='+document.getElementById('ent_sel01').value;};
@@ -2024,76 +2299,296 @@ function enviarVariables() {
 		  .catch(error => {
 			// Manejar el error
 			console.error(error);
-		  });
-				
-		//fetch(enlace, { method: "POST", mode: "no-cors" });
-		<!-- .then(response => { -->
-		  <!-- if (response.ok) { -->
-			<!-- alert("Envio remision OK"); -->
-		  <!-- } else { -->
-			<!-- alert("Error envio, verifique señal e intente de nuevo:"); -->
-		  <!-- } -->
-		<!-- }) -->
-		<!-- .catch(error => { -->
-		  <!-- alert("Error envio, verifique señal e intente de nuevo"); -->
-		<!-- }); -->
-		
+		  });		
 		
 		alert("Envio remision, OK");
 		enlace = enlace+'&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe;
 		  var textarea = document.createElement("textarea");
 		  //textarea.value = enlace;
 		  var t_serv = ser === "01" ? "PRIM" : ser === "02" ? "RECU" : ser === "03" ? "INTE" : ser === "04" ?"RECO" : "DESP";
-		  textarea.value = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
+		  //textarea.value = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value;
 		  
-		  document.body.appendChild(textarea);
-		  textarea.select();	  
-		  document.execCommand("copy");	  
-		  document.body.removeChild(textarea);
+		  //document.body.appendChild(textarea);
+		  //textarea.select();	  
+		  //document.execCommand("copy");	  
+		  //document.body.removeChild(textarea);
 		  document.title = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value+'.pdf';
-		  window.print();
-		  //console.log(enlace);
+		  //window.print();
+		  try{
+			var ser = document.querySelector('input[name="servicio"]:checked').value;
+		}catch(error){
+			var ser ="";
+		}
+		try{
+			var ace = document.querySelector('input[name="aceptacion"]:checked').value;
+		}catch(error){
+			var ace ="";
+		}	
+		var serv_json = ser === "01" ? "PRIMER SERVICIO" : ser === "02" ? "RECURRENTE" : ser === "03" ? "INTERCAMBIO" : ser === "04" ?"RECOLECCION" : "DESPACHO";
+		var acep_json = ace === "01" ? "acepta" : "n_acepto";
+		var remision_json=document.getElementById('remision').value;
+		var pedido_json=document.getElementById('pedido').value;
+		var fecha_sol_json=document.getElementById('fecha_sol').value;
+		var fecha_ent_json=document.getElementById('fecha_ent').value;
+		var documento_json=document.getElementById('documento').value;
+		var nombre_json=document.getElementById('nombre').value;
+		var direccion_json=document.getElementById('direccion').value;
+		var municipio_json=document.getElementById('municipio').value;
+		var entidad_json=document.getElementById('entidad').value;
+		var telefono_json=document.getElementById('telefono').value;
+		var barrio_json=document.getElementById('barrio').value;
+		var ent_sel01_json=document.getElementById('ent_sel01').value;
+		var ent_sel02_json=document.getElementById('ent_sel02').value;
+		var ent_sel03_json=document.getElementById('ent_sel03').value;
+		var ent_sel04_json=document.getElementById('ent_sel04').value;
+		var ent_sel05_json=document.getElementById('ent_sel05').value;
+		var ent_sel06_json=document.getElementById('ent_sel06').value;
+		var ent_sel07_json=document.getElementById('ent_sel07').value;
+		var ent_sel08_json=document.getElementById('ent_sel08').value;
+		var ent_sel09_json=document.getElementById('ent_sel09').value;
+		var ent_sel10_json=document.getElementById('ent_sel10').value;
+		var ent_sel11_json=document.getElementById('ent_sel11').value;
+		var ent_sel12_json=document.getElementById('ent_sel12').value;
+		var ent_sel13_json=document.getElementById('ent_sel13').value;
+		var rec_sel01_json=document.getElementById('rec_sel01').value;
+		var rec_sel02_json=document.getElementById('rec_sel02').value;
+		var rec_sel03_json=document.getElementById('rec_sel03').value;
+		var rec_sel04_json=document.getElementById('rec_sel04').value;
+		var rec_sel05_json=document.getElementById('rec_sel05').value;
+		var rec_sel06_json=document.getElementById('rec_sel06').value;
+		var rec_sel07_json=document.getElementById('rec_sel07').value;
+		var rec_sel08_json=document.getElementById('rec_sel08').value;
+		var rec_sel09_json=document.getElementById('rec_sel09').value;
+		var rec_sel10_json=document.getElementById('rec_sel10').value;
+		var rec_sel11_json=document.getElementById('rec_sel11').value;
+		var rec_sel12_json=document.getElementById('rec_sel12').value;
+		var rec_sel13_json=document.getElementById('rec_sel13').value;
+		var sit_sel01_json=document.getElementById('sit_sel01').value;
+		var sit_sel02_json=document.getElementById('sit_sel02').value;
+		var sit_sel03_json=document.getElementById('sit_sel03').value;
+		var sit_sel04_json=document.getElementById('sit_sel04').value;
+		var sit_sel05_json=document.getElementById('sit_sel05').value;
+		var sit_sel06_json=document.getElementById('sit_sel06').value;
+		var sit_sel07_json=document.getElementById('sit_sel07').value;
+		var sit_sel08_json=document.getElementById('sit_sel08').value;
+		var sit_sel09_json=document.getElementById('sit_sel09').value;
+		var sit_sel10_json=document.getElementById('sit_sel10').value;
+		var sit_sel11_json=document.getElementById('sit_sel11').value;
+		var sit_sel12_json=document.getElementById('sit_sel12').value;
+		var sit_sel13_json=document.getElementById('sit_sel13').value;
+		var ent_cod01_json=document.getElementById('ent_cod01').value;
+		var ent_cod02_json=document.getElementById('ent_cod02').value;
+		var ent_cod03_json=document.getElementById('ent_cod03').value;
+		var ent_cod04_json=document.getElementById('ent_cod04').value;
+		var ent_cod05_json=document.getElementById('ent_cod05').value;
+		var ent_cod06_json=document.getElementById('ent_cod06').value;
+		var ent_cod07_json=document.getElementById('ent_cod07').value;
+		var ent_cod08_json=document.getElementById('ent_cod08').value;
+		var ent_cod09_json=document.getElementById('ent_cod09').value;
+		var ent_cod10_json=document.getElementById('ent_cod10').value;
+		var ent_cod11_json=document.getElementById('ent_cod11').value;
+		var ent_cod12_json=document.getElementById('ent_cod12').value;
+		var ent_cod13_json=document.getElementById('ent_cod13').value;
+		var rec_cod01_json=document.getElementById('rec_cod01').value;
+		var rec_cod02_json=document.getElementById('rec_cod02').value;
+		var rec_cod03_json=document.getElementById('rec_cod03').value;
+		var rec_cod04_json=document.getElementById('rec_cod04').value;
+		var rec_cod05_json=document.getElementById('rec_cod05').value;
+		var rec_cod06_json=document.getElementById('rec_cod06').value;
+		var rec_cod07_json=document.getElementById('rec_cod07').value;
+		var rec_cod08_json=document.getElementById('rec_cod08').value;
+		var rec_cod09_json=document.getElementById('rec_cod09').value;
+		var rec_cod10_json=document.getElementById('rec_cod10').value;
+		var rec_cod12_json=document.getElementById('rec_cod12').value;
+		var rec_cod11_json=document.getElementById('rec_cod11').value;
+		var rec_cod13_json=document.getElementById('rec_cod13').value;
+		var sit_cod01_json=document.getElementById('sit_cod01').value;
+		var sit_cod02_json=document.getElementById('sit_cod02').value;
+		var sit_cod03_json=document.getElementById('sit_cod03').value;
+		var sit_cod04_json=document.getElementById('sit_cod04').value;
+		var sit_cod05_json=document.getElementById('sit_cod05').value;
+		var sit_cod06_json=document.getElementById('sit_cod06').value;
+		var sit_cod07_json=document.getElementById('sit_cod07').value;
+		var sit_cod08_json=document.getElementById('sit_cod08').value;
+		var sit_cod09_json=document.getElementById('sit_cod09').value;
+		var sit_cod10_json=document.getElementById('sit_cod10').value;
+		var sit_cod11_json=document.getElementById('sit_cod11').value;
+		var sit_cod12_json=document.getElementById('sit_cod12').value;
+		var sit_cod13_json=document.getElementById('sit_cod13').value;
+		var sit_cap01_json=document.getElementById('sit_cap01').value;
+		var sit_cap02_json=document.getElementById('sit_cap02').value;
+		var sit_cap03_json=document.getElementById('sit_cap03').value;
+		var sit_cap04_json=document.getElementById('sit_cap04').value;
+		var sit_cap05_json=document.getElementById('sit_cap05').value;
+		var sit_cap06_json=document.getElementById('sit_cap06').value;
+		var sit_cap07_json=document.getElementById('sit_cap07').value;
+		var sit_cap08_json=document.getElementById('sit_cap08').value;
+		var sit_cap09_json=document.getElementById('sit_cap09').value;
+		var sit_cap10_json=document.getElementById('sit_cap10').value;
+		var sit_cap11_json=document.getElementById('sit_cap11').value;
+		var sit_cap12_json=document.getElementById('sit_cap12').value;
+		var sit_cap13_json=document.getElementById('sit_cap13').value;
+		var consumible_json=document.getElementById('consumible').value;
+		var mascara_json=document.getElementById('mascara').value;
+		var llave_json=document.getElementById('llave').value;
+		var otros_json=document.getElementById('otros').value;
+		var texto_otros_json=document.getElementById('texto_otros').value;
+		var observaciones_json=document.getElementById('observaciones').value;
+		var ck_efectivo_json=document.getElementById('ck_efectivo').value;
+		var efectivo_json=document.getElementById('efectivo').value;
+		var fecha_json=document.getElementById('fecha').value;
+
+		var nombre_entrega_json=document.getElementById('nombre_entrega').value;
+		var nombre_recibe_json=document.getElementById('nombre_recibe').value;
+		var cc_entrega_json=document.getElementById('cc_entrega').value;
+		var cc_recibe_json=document.getElementById('cc_recibe').value;
+		
+		const firma_entrega_json = document.getElementById('signatureImage');
+		const firma_recibe_json = document.getElementById('signatureImage1');
+		const firma_entrega_json_src = firma_entrega_json.src;
+		const firma_recibe_json_src = firma_recibe_json.src;
+		var gps_json=document.getElementById('gps').value;
+		var agente_json=document.getElementById('agente').value;
+		var programa_json=document.getElementById('programa').value;
 		  
-		//alert("Envio remision, copiar en asistente");
-		
-		<!-- fetch("https://docs.google.com/forms/u/6/d/1BMjcZu87K0zjPb-1MujjIc5k2wAk4YrcTBNeYsxdQn4/formResponse", { -->
-		  <!-- method: "POST", -->
-		  <!-- headers: { -->
-			<!-- 'Referer': referer_url, -->
-			<!-- 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', -->
-			<!-- 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept' -->
-		  <!-- }, -->
-		  <!-- body: formData -->
-		<!-- }) -->
-		<!-- .then(response => { -->
-		  <!-- if (response.ok) { -->
-			<!-- console.log("Variables enviadas con éxito"); -->
-		  <!-- } else { -->
-			<!-- console.log("Error al enviar las variables"); -->
-		  <!-- } -->
-		<!-- }) -->
-		<!-- .catch(error => { -->
-		  <!-- console.log("Error al enviar las variables:", error); -->
-		<!-- }); -->
-		
-		<!-- fetch(form_url, { -->
-		  <!-- mode: 'no-cors', -->
-		  <!-- method: 'POST', -->
-		  <!-- headers: { -->
-			<!-- 'Access-Control-Allow-Origin': referer_url, -->
-			<!-- 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', -->
-			<!-- 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept' -->
-		  <!-- }, -->
-		  <!-- body: formData -->
-		<!-- }) -->
-		  <!-- .then(response => { -->
-			<!-- if (response.ok) { -->
-			  <!-- console.log('Formulario enviado correctamente.'); -->
-			<!-- } else { -->
-			  <!-- console.log('Error al enviar el formulario.'); -->
-			<!-- } -->
-		  <!-- }) -->
-		  <!-- .catch(error => console.error(error)); -->
+		  //var datos = {
+		  var objetoJson = {
+			tipo:serv_json,
+			remision:remision_json,
+			pedido:pedido_json,
+			fecha_sol:fecha_sol_json,
+			fecha_ent:fecha_ent_json,
+			documento:documento_json,
+			nombre:nombre_json,
+			direccion:direccion_json,
+			municipio:municipio_json,
+			entidad:entidad_json,
+			telefono:telefono_json,
+			barrio:barrio_json,
+			ent_sel01:ent_sel01_json,
+			ent_sel02:ent_sel02_json,
+			ent_sel03:ent_sel03_json,
+			ent_sel04:ent_sel04_json,
+			ent_sel05:ent_sel05_json,
+			ent_sel06:ent_sel06_json,
+			ent_sel07:ent_sel07_json,
+			ent_sel08:ent_sel08_json,
+			ent_sel09:ent_sel09_json,
+			ent_sel10:ent_sel10_json,
+			ent_sel11:ent_sel11_json,
+			ent_sel12:ent_sel12_json,
+			ent_sel13:ent_sel13_json,
+			rec_sel01:rec_sel01_json,
+			rec_sel02:rec_sel02_json,
+			rec_sel03:rec_sel03_json,
+			rec_sel04:rec_sel04_json,
+			rec_sel05:rec_sel05_json,
+			rec_sel06:rec_sel06_json,
+			rec_sel07:rec_sel07_json,
+			rec_sel08:rec_sel08_json,
+			rec_sel09:rec_sel09_json,
+			rec_sel10:rec_sel10_json,
+			rec_sel11:rec_sel11_json,
+			rec_sel12:rec_sel12_json,
+			rec_sel13:rec_sel13_json,
+			sit_sel01:sit_sel01_json,
+			sit_sel02:sit_sel02_json,
+			sit_sel03:sit_sel03_json,
+			sit_sel04:sit_sel04_json,
+			sit_sel05:sit_sel05_json,
+			sit_sel06:sit_sel06_json,
+			sit_sel07:sit_sel07_json,
+			sit_sel08:sit_sel08_json,
+			sit_sel09:sit_sel09_json,
+			sit_sel10:sit_sel10_json,
+			sit_sel11:sit_sel11_json,
+			sit_sel12:sit_sel12_json,
+			sit_sel13:sit_sel13_json,
+			ent_cod01:ent_cod01_json,
+			ent_cod02:ent_cod02_json,
+			ent_cod03:ent_cod03_json,
+			ent_cod04:ent_cod04_json,
+			ent_cod05:ent_cod05_json,
+			ent_cod06:ent_cod06_json,
+			ent_cod07:ent_cod07_json,
+			ent_cod08:ent_cod08_json,
+			ent_cod09:ent_cod09_json,
+			ent_cod10:ent_cod10_json,
+			ent_cod11:ent_cod11_json,
+			ent_cod12:ent_cod12_json,
+			ent_cod13:ent_cod13_json,
+			rec_cod01:rec_cod01_json,
+			rec_cod02:rec_cod02_json,
+			rec_cod03:rec_cod03_json,
+			rec_cod04:rec_cod04_json,
+			rec_cod05:rec_cod05_json,
+			rec_cod06:rec_cod06_json,
+			rec_cod07:rec_cod07_json,
+			rec_cod08:rec_cod08_json,
+			rec_cod09:rec_cod09_json,
+			rec_cod10:rec_cod10_json,
+			rec_cod12:rec_cod12_json,
+			rec_cod11:rec_cod11_json,
+			rec_cod13:rec_cod13_json,
+			sit_cod01:sit_cod01_json,
+			sit_cod02:sit_cod02_json,
+			sit_cod03:sit_cod03_json,
+			sit_cod04:sit_cod04_json,
+			sit_cod05:sit_cod05_json,
+			sit_cod06:sit_cod06_json,
+			sit_cod07:sit_cod07_json,
+			sit_cod08:sit_cod08_json,
+			sit_cod09:sit_cod09_json,
+			sit_cod10:sit_cod10_json,
+			sit_cod11:sit_cod11_json,
+			sit_cod12:sit_cod12_json,
+			sit_cod13:sit_cod13_json,
+			sit_cap01:sit_cap01_json,
+			sit_cap02:sit_cap02_json,
+			sit_cap03:sit_cap03_json,
+			sit_cap04:sit_cap04_json,
+			sit_cap05:sit_cap05_json,
+			sit_cap06:sit_cap06_json,
+			sit_cap07:sit_cap07_json,
+			sit_cap08:sit_cap08_json,
+			sit_cap09:sit_cap09_json,
+			sit_cap10:sit_cap10_json,
+			sit_cap11:sit_cap11_json,
+			sit_cap12:sit_cap12_json,
+			sit_cap13:sit_cap13_json,
+			consumible:consumible_json,
+			mascara:mascara_json,
+			llave:llave_json,
+			otros:otros_json,
+			texto_otros:texto_otros_json,
+			observaciones:observaciones_json,
+			ck_efectivo:ck_efectivo_json,
+			efectivo:efectivo_json,
+			fecha:fecha_json,
+			aceptacion:acep_json,
+			nombre_entrega:nombre_entrega_json,
+			nombre_recibe:nombre_recibe_json,
+			cc_entrega:cc_entrega_json,
+			cc_recibe:cc_recibe_json,
+			firma_entrega_json:firma_entrega_json_src,
+			firma_recibe_json:firma_recibe_json_src,
+			gps_json,
+			agente_json,
+			programa_json
+		  };		  
+		  const contenido = JSON.stringify(objetoJson);		  
+		  const destinatario="oxivitalservicio@gmail.com";
+		  //const asunto="Remision "+remision_json;	
+		  const asunto="Remision "+document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value+'.pdf';
+		  var archivo = new Blob([contenido], { type: 'application/json' });
+		  var url = URL.createObjectURL(archivo);
+		  var enlace = document.createElement('a');
+		  enlace.href = url;
+		  //enlace.download = document.getElementById('remision').value+'.json';
+		  enlace.download = document.getElementById('remision').value+'_'+document.getElementById('documento').value+'_'+t_serv+'_'+document.getElementById('nombre').value+'.json';
+		  enlace.click();
+		  const correo = `mailto:${destinatario}?subject=${encodeURIComponent(asunto)}`;
+		  window.open(correo);		  
 	}
 }
 function generarArchivo() {
@@ -2108,7 +2603,7 @@ function generarArchivo() {
 		var ace ="";
 	}	
 	var serv_json = ser === "01" ? "PRIMER SERVICIO" : ser === "02" ? "RECURRENTE" : ser === "03" ? "INTERCAMBIO" : ser === "04" ?"RECOLECCION" : "DESPACHO";
-	var acep_json = ace === "01" ? "acepta" : "no_acepto";
+	var acep_json = ace === "01" ? "acepta" : "n_acepto";
 	var remision_json=document.getElementById('remision').value;
 	var pedido_json=document.getElementById('pedido').value;
 	var fecha_sol_json=document.getElementById('fecha_sol').value;
