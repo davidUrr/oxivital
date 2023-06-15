@@ -2035,10 +2035,37 @@ function viajePerdido(){
 		var cc_entrega_json=document.getElementById('cc_entrega').value;
 		var cc_recibe_json=document.getElementById('cc_recibe').value;
 		
-		const firma_entrega_json = document.getElementById('signatureImage');
-		const firma_recibe_json = document.getElementById('signatureImage1');
-		const firma_entrega_json_src = firma_entrega_json.src;
-		const firma_recibe_json_src = firma_recibe_json.src;
+		var firma_entrega_json = document.getElementById('signatureImage');
+		var firma_recibe_json = document.getElementById('signatureImage1');
+		<!-- const firma_entrega_json_src = firma_entrega_json.src; -->
+		<!-- const firma_recibe_json_src = firma_recibe_json.src; -->
+		if (document.getElementById('signatureImage').style.display==='none'){
+			var imageContainer = document.getElementById("image-container");
+			var imageElement = imageContainer.querySelector("img");
+			var canvas = document.createElement("canvas");
+			var context = canvas.getContext("2d");
+			context.drawImage(imageElement, 0, 0);
+			var base64String = canvas.toDataURL();	
+			firma_entrega_json_src = base64String;
+		}else{
+			firma_entrega_json = document.getElementById('signatureImage');		
+			firma_entrega_json_src = firma_entrega_json.src;			
+		}
+		if (document.getElementById('signatureImage1').style.display==='none'){
+			var imageContainer = document.getElementById("image-container1");
+			var imageElement = imageContainer.querySelector("img");
+			var canvas = document.createElement("canvas");
+			var context = canvas.getContext("2d");
+			context.drawImage(imageElement, 0, 0);
+			var base64String = canvas.toDataURL();
+			//const firma_recibe_json = document.getElementById("image-container1");			
+			firma_recibe_json = imageContainer.querySelector("img");
+			firma_recibe_json_src = base64String;
+		}else{		
+			firma_recibe_json = document.getElementById('signatureImage1');		
+			firma_recibe_json_src = firma_recibe_json.src;
+		}
+			
 		var gps_json=document.getElementById('gps').value;
 		var agente_json=document.getElementById('agente').value;
 		var programa_json=document.getElementById('programa').value;
@@ -2443,10 +2470,36 @@ function enviarVariables() {
 		var cc_entrega_json=document.getElementById('cc_entrega').value;
 		var cc_recibe_json=document.getElementById('cc_recibe').value;
 		
-		const firma_entrega_json = document.getElementById('signatureImage');
-		const firma_recibe_json = document.getElementById('signatureImage1');
-		const firma_entrega_json_src = firma_entrega_json.src;
-		const firma_recibe_json_src = firma_recibe_json.src;
+		var firma_entrega_json = document.getElementById('signatureImage');
+		var firma_recibe_json = document.getElementById('signatureImage1');
+		<!-- const firma_entrega_json_src = firma_entrega_json.src; -->
+		<!-- const firma_recibe_json_src = firma_recibe_json.src; -->
+		if (document.getElementById('signatureImage').style.display==='none'){
+			var imageContainer = document.getElementById("image-container");
+			var imageElement = imageContainer.querySelector("img");
+			var canvas = document.createElement("canvas");
+			var context = canvas.getContext("2d");
+			context.drawImage(imageElement, 0, 0);
+			var base64String = canvas.toDataURL();	
+			firma_entrega_json_src = base64String;
+		}else{
+			firma_entrega_json = document.getElementById('signatureImage');		
+			firma_entrega_json_src = firma_entrega_json.src;			
+		}
+		if (document.getElementById('signatureImage1').style.display==='none'){
+			var imageContainer = document.getElementById("image-container1");
+			var imageElement = imageContainer.querySelector("img");
+			var canvas = document.createElement("canvas");
+			var context = canvas.getContext("2d");
+			context.drawImage(imageElement, 0, 0);
+			var base64String = canvas.toDataURL();
+			//const firma_recibe_json = document.getElementById("image-container1");			
+			firma_recibe_json = imageContainer.querySelector("img");
+			firma_recibe_json_src = base64String;
+		}else{		
+			firma_recibe_json = document.getElementById('signatureImage1');		
+			firma_recibe_json_src = firma_recibe_json.src;
+		}
 		var gps_json=document.getElementById('gps').value;
 		var agente_json=document.getElementById('agente').value;
 		var programa_json=document.getElementById('programa').value;
@@ -2720,12 +2773,38 @@ function generarArchivo() {
 	var nombre_recibe_json=document.getElementById('nombre_recibe').value;
 	var cc_entrega_json=document.getElementById('cc_entrega').value;
 	var cc_recibe_json=document.getElementById('cc_recibe').value;
-	<!-- var firma_entrega_json=firma_entrega; -->
-	<!-- var firma_recibe_json=firma_recibe; -->
-	const firma_entrega_json = document.getElementById('signatureImage');
-	const firma_recibe_json = document.getElementById('signatureImage1');
-	const firma_entrega_json_src = firma_entrega_json.src;
-	const firma_recibe_json_src = firma_recibe_json.src;
+	var firma_entrega_json=firma_entrega;
+	var firma_recibe_json=firma_recibe;
+	var firma_entrega_json = document.getElementById('signatureImage');
+	var firma_recibe_json = document.getElementById('signatureImage1');
+	<!-- const firma_entrega_json_src = firma_entrega_json.src; -->
+	<!-- const firma_recibe_json_src = firma_recibe_json.src; -->
+	if (document.getElementById('signatureImage').style.display==='none'){
+		var imageContainer = document.getElementById("image-container");
+		var imageElement = imageContainer.querySelector("img");
+		var canvas = document.createElement("canvas");
+		var context = canvas.getContext("2d");
+		context.drawImage(imageElement, 0, 0);
+		var base64String = canvas.toDataURL();	
+		firma_entrega_json_src = base64String;
+	}else{
+		firma_entrega_json = document.getElementById('signatureImage');		
+		firma_entrega_json_src = firma_entrega_json.src;			
+	}
+	if (document.getElementById('signatureImage1').style.display==='none'){
+		var imageContainer = document.getElementById("image-container1");
+		var imageElement = imageContainer.querySelector("img");
+		var canvas = document.createElement("canvas");
+		var context = canvas.getContext("2d");
+		context.drawImage(imageElement, 0, 0);
+		var base64String = canvas.toDataURL();
+		//const firma_recibe_json = document.getElementById("image-container1");			
+		firma_recibe_json = imageContainer.querySelector("img");
+		firma_recibe_json_src = base64String;
+	}else{		
+		firma_recibe_json = document.getElementById('signatureImage1');		
+		firma_recibe_json_src = firma_recibe_json.src;
+	}
 	var gps_json=document.getElementById('gps').value;
 	var agente_json=document.getElementById('agente').value;
 	var programa_json=document.getElementById('programa').value;
