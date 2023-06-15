@@ -2037,34 +2037,34 @@ function viajePerdido(){
 		
 		var firma_entrega_json = document.getElementById('signatureImage');
 		var firma_recibe_json = document.getElementById('signatureImage1');
-		<!-- const firma_entrega_json_src = firma_entrega_json.src; -->
-		<!-- const firma_recibe_json_src = firma_recibe_json.src; -->
-		if (document.getElementById('signatureImage').style.display==='none'){
-			var imageContainer = document.getElementById("image-container");
-			var imageElement = imageContainer.querySelector("img");
-			var canvas = document.createElement("canvas");
-			var context = canvas.getContext("2d");
-			context.drawImage(imageElement, 0, 0);
-			var base64String = canvas.toDataURL();	
-			firma_entrega_json_src = base64String;
-		}else{
-			firma_entrega_json = document.getElementById('signatureImage');		
-			firma_entrega_json_src = firma_entrega_json.src;			
-		}
-		if (document.getElementById('signatureImage1').style.display==='none'){
-			var imageContainer = document.getElementById("image-container1");
-			var imageElement = imageContainer.querySelector("img");
-			var canvas = document.createElement("canvas");
-			var context = canvas.getContext("2d");
-			context.drawImage(imageElement, 0, 0);
-			var base64String = canvas.toDataURL();
-			//const firma_recibe_json = document.getElementById("image-container1");			
-			firma_recibe_json = imageContainer.querySelector("img");
-			firma_recibe_json_src = base64String;
-		}else{		
-			firma_recibe_json = document.getElementById('signatureImage1');		
-			firma_recibe_json_src = firma_recibe_json.src;
-		}
+		const firma_entrega_json_src = firma_entrega_json.src;
+		const firma_recibe_json_src = firma_recibe_json.src;
+		<!-- if (document.getElementById('signatureImage').style.display==='none'){ -->
+			<!-- var imageContainer = document.getElementById("image-container"); -->
+			<!-- var imageElement = imageContainer.querySelector("img"); -->
+			<!-- var canvas = document.createElement("canvas"); -->
+			<!-- var context = canvas.getContext("2d"); -->
+			<!-- context.drawImage(imageElement, 0, 0); -->
+			<!-- var base64String = canvas.toDataURL();	 -->
+			<!-- firma_entrega_json_src = base64String; -->
+		<!-- }else{ -->
+			<!-- firma_entrega_json = document.getElementById('signatureImage');		 -->
+			<!-- firma_entrega_json_src = firma_entrega_json.src;			 -->
+		<!-- } -->
+		<!-- if (document.getElementById('signatureImage1').style.display==='none'){ -->
+			<!-- var imageContainer = document.getElementById("image-container1"); -->
+			<!-- var imageElement = imageContainer.querySelector("img"); -->
+			<!-- var canvas = document.createElement("canvas"); -->
+			<!-- var context = canvas.getContext("2d"); -->
+			<!-- context.drawImage(imageElement, 0, 0); -->
+			<!-- var base64String = canvas.toDataURL(); -->
+			<!-- //const firma_recibe_json = document.getElementById("image-container1");			 -->
+			<!-- firma_recibe_json = imageContainer.querySelector("img"); -->
+			<!-- firma_recibe_json_src = base64String; -->
+		<!-- }else{		 -->
+			<!-- firma_recibe_json = document.getElementById('signatureImage1');		 -->
+			<!-- firma_recibe_json_src = firma_recibe_json.src; -->
+		<!-- } -->
 			
 		var gps_json=document.getElementById('gps').value;
 		var agente_json=document.getElementById('agente').value;
@@ -2317,16 +2317,16 @@ function enviarVariables() {
 		var button = document.getElementById("enviarBtn");
 		button.style.backgroundColor = "green";
 		//const url = 'https://api.example.com/data';
-
-		hacerFetchCuandoOnline(enlace)
-		  .then(data => {
-			// Hacer algo con los datos
-			console.log(data);
-		  })
-		  .catch(error => {
-			// Manejar el error
-			console.error(error);
-		  });		
+		fetch(enlace, { method: "POST", mode: "no-cors" });
+		<!-- hacerFetchCuandoOnline(enlace) -->
+		  <!-- .then(data => { -->
+			<!-- // Hacer algo con los datos -->
+			<!-- console.log(data); -->
+		  <!-- }) -->
+		  <!-- .catch(error => { -->
+			<!-- // Manejar el error -->
+			<!-- console.error(error); -->
+		  <!-- });		 -->
 		
 		alert("Envio remision, OK");
 		enlace = enlace+'&entry.1978469744='+firma_entrega+'&entry.1642804531='+firma_recibe;
@@ -2472,34 +2472,34 @@ function enviarVariables() {
 		
 		var firma_entrega_json = document.getElementById('signatureImage');
 		var firma_recibe_json = document.getElementById('signatureImage1');
-		<!-- const firma_entrega_json_src = firma_entrega_json.src; -->
-		<!-- const firma_recibe_json_src = firma_recibe_json.src; -->
-		if (document.getElementById('signatureImage').style.display==='none'){
-			var imageContainer = document.getElementById("image-container");
-			var imageElement = imageContainer.querySelector("img");
-			var canvas = document.createElement("canvas");
-			var context = canvas.getContext("2d");
-			context.drawImage(imageElement, 0, 0);
-			var base64String = canvas.toDataURL();	
-			firma_entrega_json_src = base64String;
-		}else{
-			firma_entrega_json = document.getElementById('signatureImage');		
-			firma_entrega_json_src = firma_entrega_json.src;			
-		}
-		if (document.getElementById('signatureImage1').style.display==='none'){
-			var imageContainer = document.getElementById("image-container1");
-			var imageElement = imageContainer.querySelector("img");
-			var canvas = document.createElement("canvas");
-			var context = canvas.getContext("2d");
-			context.drawImage(imageElement, 0, 0);
-			var base64String = canvas.toDataURL();
-			//const firma_recibe_json = document.getElementById("image-container1");			
-			firma_recibe_json = imageContainer.querySelector("img");
-			firma_recibe_json_src = base64String;
-		}else{		
-			firma_recibe_json = document.getElementById('signatureImage1');		
-			firma_recibe_json_src = firma_recibe_json.src;
-		}
+		const firma_entrega_json_src = firma_entrega_json.src;
+		const firma_recibe_json_src = firma_recibe_json.src;
+		<!-- if (document.getElementById('signatureImage').style.display==='none'){ -->
+			<!-- var imageContainer = document.getElementById("image-container"); -->
+			<!-- var imageElement = imageContainer.querySelector("img"); -->
+			<!-- var canvas = document.createElement("canvas"); -->
+			<!-- var context = canvas.getContext("2d"); -->
+			<!-- context.drawImage(imageElement, 0, 0); -->
+			<!-- var base64String = canvas.toDataURL();	 -->
+			<!-- firma_entrega_json_src = base64String; -->
+		<!-- }else{ -->
+			<!-- firma_entrega_json = document.getElementById('signatureImage');		 -->
+			<!-- firma_entrega_json_src = firma_entrega_json.src;			 -->
+		<!-- } -->
+		<!-- if (document.getElementById('signatureImage1').style.display==='none'){ -->
+			<!-- var imageContainer = document.getElementById("image-container1"); -->
+			<!-- var imageElement = imageContainer.querySelector("img"); -->
+			<!-- var canvas = document.createElement("canvas"); -->
+			<!-- var context = canvas.getContext("2d"); -->
+			<!-- context.drawImage(imageElement, 0, 0); -->
+			<!-- var base64String = canvas.toDataURL(); -->
+			<!-- //const firma_recibe_json = document.getElementById("image-container1");			 -->
+			<!-- firma_recibe_json = imageContainer.querySelector("img"); -->
+			<!-- firma_recibe_json_src = base64String; -->
+		<!-- }else{		 -->
+			<!-- firma_recibe_json = document.getElementById('signatureImage1');		 -->
+			<!-- firma_recibe_json_src = firma_recibe_json.src; -->
+		<!-- } -->
 		var gps_json=document.getElementById('gps').value;
 		var agente_json=document.getElementById('agente').value;
 		var programa_json=document.getElementById('programa').value;
@@ -2777,34 +2777,34 @@ function generarArchivo() {
 	var firma_recibe_json=firma_recibe;
 	var firma_entrega_json = document.getElementById('signatureImage');
 	var firma_recibe_json = document.getElementById('signatureImage1');
-	<!-- const firma_entrega_json_src = firma_entrega_json.src; -->
-	<!-- const firma_recibe_json_src = firma_recibe_json.src; -->
-	if (document.getElementById('signatureImage').style.display==='none'){
-		var imageContainer = document.getElementById("image-container");
-		var imageElement = imageContainer.querySelector("img");
-		var canvas = document.createElement("canvas");
-		var context = canvas.getContext("2d");
-		context.drawImage(imageElement, 0, 0);
-		var base64String = canvas.toDataURL();	
-		firma_entrega_json_src = base64String;
-	}else{
-		firma_entrega_json = document.getElementById('signatureImage');		
-		firma_entrega_json_src = firma_entrega_json.src;			
-	}
-	if (document.getElementById('signatureImage1').style.display==='none'){
-		var imageContainer = document.getElementById("image-container1");
-		var imageElement = imageContainer.querySelector("img");
-		var canvas = document.createElement("canvas");
-		var context = canvas.getContext("2d");
-		context.drawImage(imageElement, 0, 0);
-		var base64String = canvas.toDataURL();
-		//const firma_recibe_json = document.getElementById("image-container1");			
-		firma_recibe_json = imageContainer.querySelector("img");
-		firma_recibe_json_src = base64String;
-	}else{		
-		firma_recibe_json = document.getElementById('signatureImage1');		
-		firma_recibe_json_src = firma_recibe_json.src;
-	}
+	const firma_entrega_json_src = firma_entrega_json.src;
+	const firma_recibe_json_src = firma_recibe_json.src;
+	<!-- if (document.getElementById('signatureImage').style.display==='none'){ -->
+		<!-- var imageContainer = document.getElementById("image-container"); -->
+		<!-- var imageElement = imageContainer.querySelector("img"); -->
+		<!-- var canvas = document.createElement("canvas"); -->
+		<!-- var context = canvas.getContext("2d"); -->
+		<!-- context.drawImage(imageElement, 0, 0); -->
+		<!-- var base64String = canvas.toDataURL();	 -->
+		<!-- firma_entrega_json_src = base64String; -->
+	<!-- }else{ -->
+		<!-- firma_entrega_json = document.getElementById('signatureImage');		 -->
+		<!-- firma_entrega_json_src = firma_entrega_json.src;			 -->
+	<!-- } -->
+	<!-- if (document.getElementById('signatureImage1').style.display==='none'){ -->
+		<!-- var imageContainer = document.getElementById("image-container1"); -->
+		<!-- var imageElement = imageContainer.querySelector("img"); -->
+		<!-- var canvas = document.createElement("canvas"); -->
+		<!-- var context = canvas.getContext("2d"); -->
+		<!-- context.drawImage(imageElement, 0, 0); -->
+		<!-- var base64String = canvas.toDataURL(); -->
+		<!-- //const firma_recibe_json = document.getElementById("image-container1");			 -->
+		<!-- firma_recibe_json = imageContainer.querySelector("img"); -->
+		<!-- firma_recibe_json_src = base64String; -->
+	<!-- }else{		 -->
+		<!-- firma_recibe_json = document.getElementById('signatureImage1');		 -->
+		<!-- firma_recibe_json_src = firma_recibe_json.src; -->
+	<!-- } -->
 	var gps_json=document.getElementById('gps').value;
 	var agente_json=document.getElementById('agente').value;
 	var programa_json=document.getElementById('programa').value;
