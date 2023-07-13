@@ -26,6 +26,7 @@
 <body>
 	<center>
 		<div class="card">
+		Consumo Potencia Marmita
 		<div class="header">
 			<h1 id="titulo">71.4W</h1>
 		</div>
@@ -36,14 +37,14 @@
 	</center>
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
-		var titulos = ["23.3kg", "23.3kg", "23.4kg","23.3kg"]; // Lista de textos para el título
+		var titulos = ["71.4W", "71.4W", "71.5W","71.7W"]; // Lista de textos para el título
 		var tituloElement = document.getElementById("titulo"); // Obtener el elemento del título
 
 		var index = 0;
 		setInterval(function() {
 			tituloElement.textContent = titulos[index];
 			index = (index + 1) % titulos.length;
-			}, 3000);
+			}, 4500);
 		});
 	</script>
 </body>
